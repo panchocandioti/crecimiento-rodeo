@@ -10,6 +10,7 @@ function IngresoDatos() {
     const [rechazoAdultas, setRechazoAdultas] = useState('');
     const [mortandadAdultas, setMortandadAdultas] = useState('');
     const [mostrarSeccion2, setMostrarSeccion2] = useState(false);
+    
 
     const handleIEPChange = (e) => {
         setIntervaloEntrePartos(e.target.value);
@@ -24,9 +25,6 @@ function IngresoDatos() {
     };
 
     const handleClick1 = () => {
-        console.log("IEP: " + intervaloEntrePartos);
-        console.log("Tasa de rechazo: " + rechazoAdultas);
-        console.log("Tasa de mortandad: " + mortandadAdultas);
         setMostrarSeccion2(true);
     };
 
@@ -37,15 +35,15 @@ function IngresoDatos() {
                 <form>
                     <div className='seccionFormulario'>
                         <label>Intervalo entre partos (días): </label>
-                        <input value={intervaloEntrePartos} onChange={handleIEPChange} placeholder='Ingresar los días entre partos' />
+                        <input value={intervaloEntrePartos} onChange={handleIEPChange} placeholder='Ingresar valor en días (350 - 700)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de rechazo en adultas (%): </label>
-                        <input value={rechazoAdultas} onChange={handleRechazoChange} placeholder='Ingresar el porcentaje de rechazo' />
+                        <input value={rechazoAdultas} onChange={handleRechazoChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de mortandad en adultas (%): </label>
-                        <input value={mortandadAdultas} onChange={handleMortandadChange} placeholder='Ingresar el porcentaje de mortandad' />
+                        <input value={mortandadAdultas} onChange={handleMortandadChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                 </form>
                 {mostrarSeccion2 === false && (<div>
