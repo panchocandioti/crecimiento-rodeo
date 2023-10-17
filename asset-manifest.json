@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/crecimiento-rodeo/static/css/main.f6c8cc7f.css",
-    "main.js": "/crecimiento-rodeo/static/js/main.874c21af.js",
+    "main.js": "/crecimiento-rodeo/static/js/main.80d412b3.js",
     "static/js/787.ce89fd45.chunk.js": "/crecimiento-rodeo/static/js/787.ce89fd45.chunk.js",
     "index.html": "/crecimiento-rodeo/index.html",
     "main.f6c8cc7f.css.map": "/crecimiento-rodeo/static/css/main.f6c8cc7f.css.map",
-    "main.874c21af.js.map": "/crecimiento-rodeo/static/js/main.874c21af.js.map",
+    "main.80d412b3.js.map": "/crecimiento-rodeo/static/js/main.80d412b3.js.map",
     "787.ce89fd45.chunk.js.map": "/crecimiento-rodeo/static/js/787.ce89fd45.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6c8cc7f.css",
-    "static/js/main.874c21af.js"
+    "static/js/main.80d412b3.js"
   ]
 }
