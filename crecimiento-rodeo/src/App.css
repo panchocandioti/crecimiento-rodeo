@@ -3,14 +3,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+  background-color: rgb(35, 35, 104);
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  font-size: 1.1rem;
   color: white;
+  padding-top: 1vh;
 }
 
 body {
@@ -19,12 +20,13 @@ body {
   background-position: center;
   min-height: 100vh;
   min-width: 340px;
+  color:rgb(29, 29, 53);
 }
 
 .seccion {
   margin: 10px;
   padding: 5px;
-  border: solid 2px #282c34;
+  border: solid 2px rgb(35, 35, 104);
   background-color: rgba(255,255,255,0.6);
 }
 
@@ -50,8 +52,18 @@ input {
   text-align: center;
   width: 300px;
   margin-top: 5px;
+  
 }
 
 .resultados {
   background-color: rgba(255,255,255,0.5);
+  padding: 1.5px;
+  border-radius: 10px;
+  margin: 1.5px;
+}
+
+#MiLecheria {
+  max-height: 65px;
+  max-width: 85vw;
+  margin-bottom: -20px;
 }

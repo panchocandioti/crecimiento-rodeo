@@ -3,7 +3,7 @@ import React from 'react';
 function CrecimientoRodeo(props) {
 
     const relacionReemplazosBajasCP = props.reposicionCP / props.bajas;
-    const relacionReemplazosBajasLP = props.reposicionCP / props.bajas;
+    const relacionReemplazosBajasLP = props.reposicionLP / props.bajas;
 
   return (
     <div>
@@ -12,8 +12,8 @@ function CrecimientoRodeo(props) {
       </div>)}
       {props.validacion1 === true && props.validacion2 === true && (<div className='resultados'>
         <h3>RELACIÓN REEMPLAZOS / BAJAS</h3>
-        <h3>Corto plazo: <span style={{ color: 'red' }}>{(relacionReemplazosBajasCP).toFixed(1)} / 1</span></h3>
-        <h3>Largo plazo: <span style={{ color: 'red' }}>{(relacionReemplazosBajasCP).toFixed(1)} / 1</span></h3>
+        <h3>Corto plazo: <span style={{ color: 'red' }}>{(relacionReemplazosBajasCP).toFixed(2)} / 1</span></h3>
+        <h3>Largo plazo: <span style={{ color: 'red' }}>{(relacionReemplazosBajasLP).toFixed(2)} / 1</span></h3>
       </div>)}
       {props.validacion1 === true && props.validacion2 === true && (<div className='resultados'>
         <h3>CRECIMIENTO DE RODEO</h3>

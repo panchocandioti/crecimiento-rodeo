@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import IngresoDatos from './IngresoDatos';
+import MiLecheria from "../Media/MiLecheria.jpg"
 
 function Presentacion() {
 
@@ -16,6 +17,7 @@ function Presentacion() {
     return (
         <div>
             <header className="App-header">
+                <img src={MiLecheria} id="MiLecheria"></img>
                 <h1>CRECIMIENTO DEL RODEO LECHERO</h1>
             </header>
             {mostrarInstrucciones && (<div className="seccion">
