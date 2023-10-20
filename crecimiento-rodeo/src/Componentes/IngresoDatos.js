@@ -3,34 +3,83 @@ import VidaUtilVacas from './VidaUtilVacas'
 import ReposicionEfectiva from './ReposicionEfectiva'
 import CrecimientoRodeo from './CrecimientoRodeo'
 import BotonReset from './BotonReset'
+import Grafico from './Grafico'
 
 function IngresoDatos() {
 
+    //Datos que se ingresan
     const [intervaloEntrePartos, setIntervaloEntrePartos] = useState('');
     const [rechazoAdultas, setRechazoAdultas] = useState('');
     const [mortandadAdultas, setMortandadAdultas] = useState('');
     const [mostrarSeccion2, setMostrarSeccion2] = useState(false);
     const [mortandadTerneros, setMortandadTerneros] = useState('');
     const [mortandadRecria, setMortandadRecria] = useState('');
-    const [rechazoVaquillonas, setRechazoVaquillonas] = useState('');
+    const [rechazoRecria, setrechazoRecria] = useState('');
     const [prenezVaquillonas, setPrenezVaquillonas] = useState('');
     const [abortos, setAbortos] = useState('');
     const [edadPartoAnterior, setEdadPartoAnterior] = useState('');
     const [edadPartoActual, setEdadPartoActual] = useState('');
     const [hembrasPrimiparas, setHembrasPrimiparas] = useState('');
     const [hembrasMultiparas, setHembrasMultiparas] = useState('');
+    const [mostrarSeccion3, setMostrarSeccion3] = useState(false);
 
-    const bajas = parseFloat(rechazoAdultas) + parseFloat(mortandadAdultas);
-    const vidaUtil = ((100 / bajas) * (365 / parseInt(intervaloEntrePartos))).toFixed(2);
+    //Cálculos sección 1
+    const bajas = (parseFloat(rechazoAdultas) + parseFloat(mortandadAdultas)).toFixed(1);
+    const vidaUtil = ((100 / bajas) * (365 / parseInt(intervaloEntrePartos))).toFixed(1);
 
+    //Cálculos sección 2
+    let hembrasProporcion = 0.5;
+    const vacasAdultas = 100;
+    const vaqOrigen1 = vacasAdultas * (1 - bajas / 100) * hembrasProporcion * (1 - ((parseFloat(mortandadTerneros) + parseFloat(mortandadRecria) + parseFloat(rechazoRecria) + parseFloat(abortos)) / 100));
+    const coefSup = (parseInt(edadPartoAnterior) - parseInt(edadPartoActual)) / 12;
+    const ternerasVT = vacasAdultas * (1 - bajas / 100) * (365 / parseInt(intervaloEntrePartos)) * parseFloat(hembrasMultiparas) / 100 * (1 - ((parseFloat(mortandadTerneros) + parseFloat(abortos)) / 100));
+    const ternerasVq = vaqOrigen1 * (1 - (parseFloat(mortandadRecria) + parseFloat(rechazoRecria)) / 100) * parseFloat(prenezVaquillonas) / 100 * parseFloat(hembrasPrimiparas) / 100 * (1 - ((parseFloat(mortandadTerneros) + parseFloat(abortos)) / 100))
+    const ternerasTotales = ternerasVT + ternerasVq;
+    hembrasProporcion = (ternerasVT + ternerasVq) / (ternerasVT / (hembrasMultiparas / 100) + ternerasVq / (hembrasPrimiparas / 100));
+    const hembrasLP = ternerasTotales * parseFloat(prenezVaquillonas) / 100 * (1 - (parseFloat(mortandadRecria) + parseFloat(rechazoRecria)) / 100);
+    const hembrasCP = ternerasTotales * (1 + coefSup) * parseFloat(prenezVaquillonas) / 100 * (1 - (parseFloat(mortandadRecria) + parseFloat(rechazoRecria)) / 100);
+    const demandaHembras = vacasAdultas * (bajas / 100);
+    const crecimientoCabezasLP = hembrasLP - demandaHembras;
+    const crecimientoCabezasCP = hembrasCP - demandaHembras;
+    const reposicionLP = hembrasLP / vacasAdultas * 100;
+    const reposicionCP = hembrasCP / vacasAdultas * 100;
+    const crecimientoLP = crecimientoCabezasLP / vacasAdultas * 100;
+    const crecimientoCP = crecimientoCabezasCP / vacasAdultas * 100;
+
+
+    //Datos para validaciones
     let formatoEnteroPositivo = /^[1-9]\d*$/;
     let formatoPorcentaje = /^(100(\.0{1,2})?|[1-9]\d?(\.\d{1,2})?|0(\.[1-9]\d?)?|0)$/;
     let validacion1 = true;
+    let validacion2 = true;
 
-    if (!formatoEnteroPositivo.test(intervaloEntrePartos) || intervaloEntrePartos <350 || intervaloEntrePartos > 700 || !formatoPorcentaje.test(bajas) || bajas > 100) {
+    //Validación 1
+    if (!formatoEnteroPositivo.test(intervaloEntrePartos) || intervaloEntrePartos < 350 ||
+        intervaloEntrePartos > 700 || !formatoPorcentaje.test(bajas) || bajas > 100) {
         validacion1 = false;
     }
-    
+
+    //Validación 2
+    if (!formatoEnteroPositivo.test(edadPartoAnterior) || edadPartoAnterior < 12 || edadPartoAnterior > 48) {
+        validacion2 = false;
+    }
+
+    if (!formatoEnteroPositivo.test(edadPartoActual) || edadPartoActual < 12 || edadPartoActual > 48) {
+        validacion2 = false;
+    }
+
+    if (!formatoPorcentaje.test(mortandadTerneros) || !formatoPorcentaje.test(mortandadRecria) ||
+        !formatoPorcentaje.test(rechazoRecria) || !formatoPorcentaje.test(prenezVaquillonas) ||
+        !formatoPorcentaje.test(abortos) || !formatoPorcentaje.test(hembrasPrimiparas) ||
+        !formatoPorcentaje.test(hembrasMultiparas)) {
+        validacion2 = false;
+    }
+
+    if ((parseFloat(mortandadRecria) + parseFloat(rechazoRecria) > 100)) {
+        validacion2 = false;
+    }
+
+    //Sección 1
     const handleIEPChange = (e) => {
         setIntervaloEntrePartos(e.target.value);
     };
@@ -45,10 +94,11 @@ function IngresoDatos() {
 
     const handleClick1 = () => {
         if (validacion1) {
-        setMostrarSeccion2(true);
+            setMostrarSeccion2(true);
         }
     };
 
+    //Sección 2
     const handleMortandadTernerosChange = (e) => {
         setMortandadTerneros(e.target.value);
     };
@@ -57,8 +107,8 @@ function IngresoDatos() {
         setMortandadRecria(e.target.value);
     };
 
-    const handleRechazoVaquillonasChange = (e) => {
-        setRechazoVaquillonas(e.target.value);
+    const handlerechazoRecriaChange = (e) => {
+        setrechazoRecria(e.target.value);
     };
 
     const handlePrenezVaquillonasChange = (e) => {
@@ -85,6 +135,12 @@ function IngresoDatos() {
         setHembrasMultiparas(e.target.value);
     };
 
+    const handleClick2 = () => {
+        if (validacion2) {
+            setMostrarSeccion3(true);
+        }
+    };
+
     return (
         <div>
             <div className='seccion'>
@@ -108,11 +164,11 @@ function IngresoDatos() {
                     <BotonReset />
                 </div>)}
                 {mostrarSeccion2 && (<div>
-                    <VidaUtilVacas validacion1={validacion1} bajas={bajas} vidaUtil={vidaUtil}/>
+                    <VidaUtilVacas validacion1={validacion1} bajas={bajas} vidaUtil={vidaUtil} />
                 </div>)}
             </div>
             {mostrarSeccion2 && (<div className='seccion'>
-            <h2>Cálculo de reposición anual efectiva:</h2>
+                <h2>Cálculo de reposición anual efectiva:</h2>
                 <form>
                     <div className='seccionFormulario'>
                         <label>Tasa de mortandad de terneros (%): </label>
@@ -123,8 +179,8 @@ function IngresoDatos() {
                         <input value={mortandadRecria} onChange={handleMortandadRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Tasa de rechazo de vaquillonas (%): </label>
-                        <input value={rechazoVaquillonas} onChange={handleRechazoVaquillonasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <label>Tasa de rechazo de recría (%): </label>
+                        <input value={rechazoRecria} onChange={handlerechazoRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Eficiencia de preñez de vaquillonas (%): </label>
@@ -151,11 +207,18 @@ function IngresoDatos() {
                         <input value={hembrasMultiparas} onChange={handleHembrasMultiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                 </form>
-                <button>Calcular</button>
-                <ReposicionEfectiva />
+                {mostrarSeccion3 === false && (<div>
+                    <button onClick={handleClick2}>Calcular</button>
+                    <BotonReset />
+                </div>)}
+                {mostrarSeccion3 && (<ReposicionEfectiva validacion2={validacion2} hembrasProporcion={hembrasProporcion} reposicionCP={reposicionCP} reposicionLP={reposicionLP} />)}
             </div>
             )}
-            <CrecimientoRodeo />
+            {mostrarSeccion3 && (<div className='seccion'>
+                <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP}/>
+                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} />
+                <BotonReset />
+            </div>)}
         </div>
     )
 }

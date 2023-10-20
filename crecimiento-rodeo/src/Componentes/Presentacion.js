@@ -26,7 +26,7 @@ function Presentacion() {
                     {mostrarInstrucciones === true ? "Ocultar instrucciones" : "Mostrar instrucciones"}
                 </button>
                 {comenzar === false && (<button onClick={manejarOnclick2}>
-                    Comenzar
+                    Aceptar términos y comenzar
                 </button>)}   
             </div>
             {comenzar && (<div>

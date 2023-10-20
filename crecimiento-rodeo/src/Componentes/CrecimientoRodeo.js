@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function CrecimientoRodeo() {
+function CrecimientoRodeo(props) {
+
   return (
-    <div>CrecimientoRodeo</div>
+    <div>
+      <div style={{ backgroundColor: "lightgray" }}>
+        <h3>CRECIMIENTO (Corto plazo): <span style={{ color: 'red' }}>{(props.crecimientoCP).toFixed(1)}%</span></h3>
+        <h3>CRECIMIENTO (Largo plazo): <span style={{ color: 'red' }}>{(props.crecimientoLP).toFixed(1)}%</span></h3>
+      </div>
+    </div>
   )
 }
 
