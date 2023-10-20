@@ -148,15 +148,15 @@ function IngresoDatos() {
                 <form>
                     <div className='seccionFormulario'>
                         <label>Intervalo entre partos (días): </label>
-                        <input value={intervaloEntrePartos} onChange={handleIEPChange} placeholder='Ingresar valor en días (350 - 700)' />
+                        <input type='number' value={intervaloEntrePartos} onChange={handleIEPChange} placeholder='Ingresar valor en días (350 - 700)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de rechazo de adultas (%): </label>
-                        <input value={rechazoAdultas} onChange={handleRechazoChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={rechazoAdultas} onChange={handleRechazoChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de mortandad de adultas (%): </label>
-                        <input value={mortandadAdultas} onChange={handleMortandadChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={mortandadAdultas} onChange={handleMortandadChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                 </form>
                 {mostrarSeccion2 === false && (<div>
