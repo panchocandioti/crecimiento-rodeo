@@ -172,39 +172,39 @@ function IngresoDatos() {
                 <form>
                     <div className='seccionFormulario'>
                         <label>Tasa de mortandad de terneros (%): </label>
-                        <input value={mortandadTerneros} onChange={handleMortandadTernerosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={mortandadTerneros} onChange={handleMortandadTernerosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de mortandad de recría (%): </label>
-                        <input value={mortandadRecria} onChange={handleMortandadRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={mortandadRecria} onChange={handleMortandadRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de rechazo de recría (%): </label>
-                        <input value={rechazoRecria} onChange={handlerechazoRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={rechazoRecria} onChange={handlerechazoRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Eficiencia de preñez de vaquillonas (%): </label>
-                        <input value={prenezVaquillonas} onChange={handlePrenezVaquillonasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={prenezVaquillonas} onChange={handlePrenezVaquillonasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa general de abortos (%): </label>
-                        <input value={abortos} onChange={handleAbortosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={abortos} onChange={handleAbortosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Edad al primer parto año anterior (meses): </label>
-                        <input value={edadPartoAnterior} onChange={handleEdadPartoAnteriorChange} placeholder='Ingresar un valor en meses (12 - 48)' />
+                        <input type='number' value={edadPartoAnterior} onChange={handleEdadPartoAnteriorChange} placeholder='Ingresar un valor en meses (12 - 48)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Edad al primer parto año actual (meses): </label>
-                        <input value={edadPartoActual} onChange={handleEdadPartoActualChange} placeholder='Ingresar un valor en meses (12 - 48)' />
+                        <input type='number' value={edadPartoActual} onChange={handleEdadPartoActualChange} placeholder='Ingresar un valor en meses (12 - 48)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Proporción crías hembras (primíparas) (%): </label>
-                        <input value={hembrasPrimiparas} onChange={handleHembrasPrimiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={hembrasPrimiparas} onChange={handleHembrasPrimiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>
                         <label>Proporción crías hembras (multíparas) (%): </label>
-                        <input value={hembrasMultiparas} onChange={handleHembrasMultiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <input type='number' value={hembrasMultiparas} onChange={handleHembrasMultiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                 </form>
                 {mostrarSeccion3 === false && (<div>
@@ -217,7 +217,7 @@ function IngresoDatos() {
             {mostrarSeccion3 && (<div className='seccion'>
                 <h2>Resultados:</h2>
                 <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
-                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} validacion1={validacion1} validacion2={validacion2}/>
+                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2}/>
                 <BotonReset />
             </div>)}
         </div>

@@ -7,7 +7,7 @@ function ReposicionEfectiva(props) {
         <h3 style={{ color: "darkred", backgroundColor: "lightpink" }}>Revisar los valores ingresados</h3>
       </div>)}
       {props.validacion1 && props.validacion2 && (<div>
-        <p>Proporción global crías hembras: <span style={{ color: 'red' }}>{(props.hembrasProporcion * 100).toFixed(1)}%</span></p>
+        <p>Proporción global crías hembras: <span style={{ color: 'red', fontWeight: 600 }}>{(props.hembrasProporcion * 100).toFixed(1)}%</span></p>
         <div className='resultados'>
           <h3>REPOSICIÓN ANUAL</h3>
           <h3>Corto plazo: <span style={{ color: 'red' }}>{(props.reposicionCP).toFixed(1)}%</span></h3>
