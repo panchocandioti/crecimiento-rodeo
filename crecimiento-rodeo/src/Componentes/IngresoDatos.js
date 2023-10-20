@@ -211,12 +211,13 @@ function IngresoDatos() {
                     <button onClick={handleClick2}>Calcular</button>
                     <BotonReset />
                 </div>)}
-                {mostrarSeccion3 && (<ReposicionEfectiva validacion2={validacion2} hembrasProporcion={hembrasProporcion} reposicionCP={reposicionCP} reposicionLP={reposicionLP} />)}
+                {mostrarSeccion3 && (<ReposicionEfectiva validacion1={validacion1} validacion2={validacion2} hembrasProporcion={hembrasProporcion} reposicionCP={reposicionCP} reposicionLP={reposicionLP} />)}
             </div>
             )}
             {mostrarSeccion3 && (<div className='seccion'>
-                <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP}/>
-                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} />
+                <h2>Resultados:</h2>
+                <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
+                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} validacion1={validacion1} validacion2={validacion2}/>
                 <BotonReset />
             </div>)}
         </div>
