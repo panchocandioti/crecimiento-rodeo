@@ -16,7 +16,7 @@ function CrecimientoRodeo(props) {
         <h3>Largo plazo: <span style={{ color: 'red' }}>{(relacionReemplazosBajasLP).toFixed(2)} / 1</span></h3>
       </div>)}
       {props.validacion1 === true && props.validacion2 === true && (<div className='resultados'>
-        <h3>CRECIMIENTO DE RODEO</h3>
+        <h3>CRECIMIENTO ANUAL DEL RODEO</h3>
         <h3>Corto plazo: <span style={{ color: 'red' }}>{(props.crecimientoCP).toFixed(1)}%</span></h3>
         <h3>Largo plazo: <span style={{ color: 'red' }}>{(props.crecimientoLP).toFixed(1)}%</span></h3>
       </div>)}
