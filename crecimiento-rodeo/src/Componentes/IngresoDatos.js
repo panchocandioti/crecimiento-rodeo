@@ -4,6 +4,7 @@ import ReposicionEfectiva from './ReposicionEfectiva'
 import CrecimientoRodeo from './CrecimientoRodeo'
 import BotonReset from './BotonReset'
 import Grafico from './Grafico'
+import PruebaPush from './PruebaPush'
 
 function IngresoDatos() {
 
@@ -43,8 +44,8 @@ function IngresoDatos() {
     const crecimientoCabezasCP = hembrasCP - demandaHembras;
     const reposicionLP = hembrasLP / vacasAdultas * 100;
     const reposicionCP = hembrasCP / vacasAdultas * 100;
-    const crecimientoLP = crecimientoCabezasLP / vacasAdultas * 100;
-    const crecimientoCP = crecimientoCabezasCP / vacasAdultas * 100;
+    const crecimientoLP = (crecimientoCabezasLP / vacasAdultas * 100);
+    const crecimientoCP = (crecimientoCabezasCP / vacasAdultas * 100);
 
 
     //Datos para validaciones
@@ -218,6 +219,7 @@ function IngresoDatos() {
                 <h2>Resultados:</h2>
                 <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
                 <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2}/>
+                <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP}/>
                 <BotonReset />
             </div>)}
         </div>

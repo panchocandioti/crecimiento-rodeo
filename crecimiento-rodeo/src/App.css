@@ -23,11 +23,15 @@ body {
   color:rgb(29, 29, 53);
 }
 
-.seccion {
+.seccion, .opciones {
   margin: 10px;
   padding: 5px;
   border: solid 2px rgb(35, 35, 104);
   background-color: rgba(255,255,255,0.6);
+}
+
+.opciones {
+  font-size: small;
 }
 
 button {
@@ -66,4 +70,11 @@ input {
   max-height: 65px;
   max-width: 85vw;
   margin-bottom: -20px;
+}
+
+.subseccion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
