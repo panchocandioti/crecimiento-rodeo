@@ -42,17 +42,17 @@ function GraficoEvolucion(props) {
     const data = {
         labels: ["Año 0", "Año 1", "Año 2", "Año 3", "Año 4", "Año 5"],
         datasets: [{
-            label: "Est.1",
+            label: "Vacas E1",
             data: vacasTotales1,
             borderColor: "darkred",
         },
         {
-            label: "Est.2",
+            label: "Vacas E2",
             data: vacasTotales2,
             borderColor: "darkblue",
         },
         {
-            label: "Est.3",
+            label: "Vacas E3",
             data: vacasTotales3,
             borderColor: "darkgreen",
         }
