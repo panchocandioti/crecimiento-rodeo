@@ -56,7 +56,11 @@ input {
   text-align: center;
   width: 300px;
   margin-top: 5px;
-  
+  font-size: medium;
+}
+
+input::placeholder {
+  font-size:small;
 }
 
 .resultados {
