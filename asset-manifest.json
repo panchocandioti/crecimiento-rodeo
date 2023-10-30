@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/crecimiento-rodeo/static/css/main.a325f9b2.css",
-    "main.js": "/crecimiento-rodeo/static/js/main.27c2f8d9.js",
+    "main.css": "/crecimiento-rodeo/static/css/main.12eb3a78.css",
+    "main.js": "/crecimiento-rodeo/static/js/main.9055d2e0.js",
     "static/js/787.ce89fd45.chunk.js": "/crecimiento-rodeo/static/js/787.ce89fd45.chunk.js",
     "static/media/vaquitas.jpg": "/crecimiento-rodeo/static/media/vaquitas.d2be3faf24f6817edd18.jpg",
     "static/media/MiLecheria.jpg": "/crecimiento-rodeo/static/media/MiLecheria.589f48ee1baa602c7355.jpg",
     "index.html": "/crecimiento-rodeo/index.html",
-    "main.a325f9b2.css.map": "/crecimiento-rodeo/static/css/main.a325f9b2.css.map",
-    "main.27c2f8d9.js.map": "/crecimiento-rodeo/static/js/main.27c2f8d9.js.map",
+    "main.12eb3a78.css.map": "/crecimiento-rodeo/static/css/main.12eb3a78.css.map",
+    "main.9055d2e0.js.map": "/crecimiento-rodeo/static/js/main.9055d2e0.js.map",
     "787.ce89fd45.chunk.js.map": "/crecimiento-rodeo/static/js/787.ce89fd45.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a325f9b2.css",
-    "static/js/main.27c2f8d9.js"
+    "static/css/main.12eb3a78.css",
+    "static/js/main.9055d2e0.js"
   ]
 }
