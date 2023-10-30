@@ -172,7 +172,7 @@ function IngresoDatos() {
                 <h2>Cálculo de reposición anual efectiva:</h2>
                 <form>
                     <div className='seccionFormulario'>
-                        <label>Tasa de mortandad de terneros (%): </label>
+                        <label>Tasa de mortandad de terneras (%): </label>
                         <input type='number' value={mortandadTerneros} onChange={handleMortandadTernerosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
                     </div>
                     <div className='seccionFormulario'>

@@ -82,15 +82,15 @@ return (
         {validacion && (<div>
             <div className='subseccion'>
                 <button onClick={() => agregarValores1()}>Estado 1</button>
-                <p>CRECIMIENTO - CP: {(valores1[0]).toFixed(1)} | LP: {(valores1[1]).toFixed(1)}</p>
+                <p>CRECIMIENTO - CP: {(valores1[0]).toFixed(1)}% | LP: {(valores1[1]).toFixed(1)}%</p>
             </div>
             <div className='subseccion'>
                 <button onClick={() => agregarValores2()}>Estado 2</button>
-                <p>CRECIMIENTO - CP: {(valores2[0]).toFixed(1)} | LP: {(valores2[1]).toFixed(1)}</p>
+                <p>CRECIMIENTO - CP: {(valores2[0]).toFixed(1)}% | LP: {(valores2[1]).toFixed(1)}%</p>
             </div>
             <div className='subseccion'>
                 <button onClick={() => agregarValores3()}>Estado 3</button>
-                <p>CRECIMIENTO - CP: {(valores3[0]).toFixed(1)} | LP: {(valores3[1]).toFixed(1)}</p>
+                <p>CRECIMIENTO - CP: {(valores3[0]).toFixed(1)}% | LP: {(valores3[1]).toFixed(1)}%</p>
             </div>
             <GraficoEvolucion linea1={linea1} linea2={linea2} linea3={linea3} />
         </div>)}
