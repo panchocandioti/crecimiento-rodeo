@@ -88,3 +88,33 @@ input::placeholder {
   padding-left: 1%;
   padding-right: 1%;
 }
+
+.logo {
+  max-width: 75vw;
+  max-height: 100px;
+  margin-top: 15px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+footer {
+  margin-top: 70px;
+  background-color: white;
+  color: rgb(35, 35, 104);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: rgb(117, 189, 213) solid 25px;
+  border-bottom:rgb(117, 189, 213) solid 25px;
+  line-height: 0.6;
+}
+
+.containerLogos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
