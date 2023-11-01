@@ -68,6 +68,9 @@ function Presentacion() {
                     <p>Ing. Agr. EPL Francisco Candioti</p>
                     <p>panchocandioti@gmail.com</p>
                 </div>
+                <div>
+                <p><b>Con el apoyo de:</b></p>
+                </div>
                 <div className='containerLogos'>
                     <img src={LogoSaltoAgro} className='logo'></img>
                     <img src={LogoML1} className='logo'></img>

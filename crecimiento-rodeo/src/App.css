@@ -117,4 +117,5 @@ footer {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 10px;
 }
