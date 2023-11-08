@@ -45,7 +45,7 @@ function Presentacion() {
                         <li>Detección de puntos críticos</li>
                         <li>¿Qué pasaría si...? (pruebas)</li>
                         <li>Selección de dos alternativas exitosas (Estados 2 y 3)</li>
-                        <li>Emisión del reporte final</li>
+                        <li>Emisión de reporte final</li>
                     </ol>
                     <p>Debido a la gran cantidad de variables involucradas en la selección de datos de entrada, la interpretación de resultados y las aplicaciones de esta herramienta en general, el usuario asume toda la responsabilidad por su uso.</p>
 
