@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import IngresoDatos from './IngresoDatos';
 import MiLecheria from "../Media/MiLecheria.jpg"
 import LogoSaltoAgro from "../Media/LogoSaltoAgro.png"
@@ -48,14 +48,20 @@ function Presentacion() {
                 <h2>Introducción:</h2>
                 <div id="instrucciones">
                     <button onClick={manejarOnClick3} className='mostrar'>
-                        {mostrarGeneralidades === true ? "Generalidades ˄ " : "Generalidades ˅ "}
+                        {mostrarGeneralidades === true ? "Generalidades y objetivos ˄ " : "Generalidades y objetivos ˅ "}
                     </button>
                     {mostrarGeneralidades && (<div>
                         <p>Durante un ejercio anual un rodeo lechero crece cuando las vacas adultas que finalizan su vida útil (muerte y/o rechazo) son menos que las vacas nuevas (vaquillonas de reemplazo) que inician su vida productiva, finalizando el período con más vacas adultas que al comienzo.
                             Esto debería lograrse como resultado de la dinámica propia del rodeo (crecimiento genuino) sin recurrir a compra de vacas y/o vaquillonas.</p>
-                        <p>Mediante el uso de esta aplicación web se puede simular el crecimiento genuino de un rodeo lechero ingresando ciertos parámetros.</p>
+                        <p>Objetivos de esta aplicación:</p>
+                        <ul>
+                            <li>Despertar interés por la enorme oportunidad que supone el crecimiento del rodeo lechero</li>
+                            <li>Contribuir a la comprensión de los parámetros/procesos relacionados</li>
+                            <li>Ofrecer una herramienta de cuantificación para uso didáctico y aplicación práctica</li>
+                        </ul>
+                        <p>Mediante el uso de esta aplicación web se puede simular el crecimiento genuino de un rodeo lechero ingresando ciertos parámetros del rodeo.</p>
                         <p>El ingreso de parámetros está dividido en dos formularios: "Cálculo de bajas anuales y vida útil de vacas adultas" y "Cálculo de reposición anual efectiva". Debe completarse el primero para acceder al segundo.
-                            Para cada parámetro puede consultarse una definición simplificada o un breve mensaje de ayuda. Los valores ingresados pueden cambiarse en cualquier momento.</p>
+                            Para cada input puede consultarse una definición simplificada o un breve mensaje de ayuda. Los valores ingresados pueden cambiarse en cualquier momento.</p>
                     </div>)}
                     <br></br>
                     <button onClick={manejarOnClick4} className='mostrar'>
