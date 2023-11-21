@@ -69,9 +69,11 @@ function Presentacion() {
                     </button>
                     {mostrarResultados && (<div>
                         <ul>
+                            <li>Porcentaje anual de bajas y duración de las vacas</li>
+                            <li>Porcentaje anual de reposición efectiva de corto y largo plazo</li>
                             <li>Gráfico comparando bajas con reposición de corto y largo plazo</li>
-                            <li>Relación Reemplazos / Bajas (corto y largo plazo)</li>
-                            <li>Crecimiento porcentual del rodeo (corto y largo plazo)</li>
+                            <li>Relación Reemplazos/Bajas (corto y largo plazo)</li>
+                            <li>Crecimiento porcentual anual del rodeo (corto y largo plazo)</li>
                             <li>Gráfico de evolución comparada a cinco años (para tres estados diferentes del rodeo y partiendo del número de vacas elegido por el usuario)</li>
                         </ul>
                         <p>En este último gráfico los tres estados toman por defecto los valores de la primera simulación terminada. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en un estado y visualizar su curva de evolución.</p>
