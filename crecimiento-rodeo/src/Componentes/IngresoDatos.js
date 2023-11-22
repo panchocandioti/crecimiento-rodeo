@@ -153,9 +153,11 @@ function IngresoDatos() {
                         <input type='number' value={intervaloEntrePartos} onChange={handleIEPChange} placeholder='Ingresar valor en días (350 - 700)' />
                         <Tooltip anchorSelect="#ipp" place="top">
                             <p><b>Intervalo entre partos:</b></p>
-                            <p>Promedio de días entre el último parto y el anterior para todas las vacas adultas</p>
-                            <p>Puede utilizarse en su lugar el <b>Intervalo entre partos futuro:</b></p>
-                            <p>Promedio de días entre el último parto y la fecha estimada de próximo parto para todas las vacas preñadas</p>
+                            <p>Días entre el último parto y el anterior</p>
+                            <p>Promedio para todas las vacas adultas</p>
+                            <p>Puede usarse <b>Intervalo entre partos futuro:</b></p>
+                            <p>Días entre el último parto y fecha estimada de próximo parto</p>
+                            <p>Promedio para todas las vacas preñadas</p>
 
                         </Tooltip>
                     </div>
