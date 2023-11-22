@@ -5,6 +5,7 @@ import CrecimientoRodeo from './CrecimientoRodeo'
 import BotonReset from './BotonReset'
 import Grafico from './Grafico'
 import PruebaPush from './PruebaPush'
+import { Tooltip } from 'react-tooltip'
 
 function IngresoDatos() {
 
@@ -148,8 +149,15 @@ function IngresoDatos() {
                 <h2>Cálculo de bajas anuales y vida útil de vacas adultas:</h2>
                 <form>
                     <div className='seccionFormulario'>
-                        <label>Intervalo entre partos (días): </label>
+                        <label id="ipp">Intervalo entre partos (días): </label>
                         <input type='number' value={intervaloEntrePartos} onChange={handleIEPChange} placeholder='Ingresar valor en días (350 - 700)' />
+                        <Tooltip anchorSelect="#ipp" place="top">
+                            <p><b>Intervalo entre partos:</b></p>
+                            <p>Promedio de días entre el último parto y el anterior para todas las vacas adultas</p>
+                            <p>Puede utilizarse en su lugar el <b>Intervalo entre partos futuro:</b></p>
+                            <p>Promedio de días entre el último parto y la fecha estimada de próximo parto para todas las vacas preñadas</p>
+
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
                         <label>Tasa de rechazo de adultas (%): </label>
@@ -218,8 +226,8 @@ function IngresoDatos() {
             {mostrarSeccion3 && (<div className='seccion'>
                 <h2>Resultados:</h2>
                 <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
-                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2}/>
-                <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP}/>
+                <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2} />
+                <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} />
                 <BotonReset />
             </div>)}
         </div>
