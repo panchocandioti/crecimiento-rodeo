@@ -156,9 +156,8 @@ function IngresoDatos() {
                             <p>Días entre el último parto y el anterior</p>
                             <p>Promedio para todas las vacas adultas</p>
                             <p>Puede usarse <b>Intervalo entre partos futuro:</b></p>
-                            <p>Días entre el último parto y fecha estimada de próximo parto</p>
+                            <p>Días entre último parto y fecha estimada de próximo parto</p>
                             <p>Promedio para todas las vacas preñadas</p>
-
                         </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
