@@ -161,12 +161,20 @@ function IngresoDatos() {
                         </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Tasa de rechazo de adultas (%): </label>
+                        <label id="rech">Tasa de rechazo de adultas (%): </label>
                         <input type='number' value={rechazoAdultas} onChange={handleRechazoChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#rech" place="top">
+                            <p><b>Tasa de rechazo de vacas adultas (% anual):</b></p>
+                            <p>Vacas vendidas / Vacas totales * 100</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Tasa de mortandad de adultas (%): </label>
+                        <label id="mortad">Tasa de mortandad de adultas (%): </label>
                         <input type='number' value={mortandadAdultas} onChange={handleMortandadChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#mortad" place="top">
+                            <p><b>Tasa de mortandad de vacas adultas (% anual):</b></p>
+                            <p>Vacas muertas / Vacas totales * 100</p>
+                        </Tooltip>
                     </div>
                 </form>
                 {mostrarSeccion2 === false && (<div>
