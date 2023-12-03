@@ -48,6 +48,13 @@ function IngresoDatos() {
     const crecimientoLP = (crecimientoCabezasLP / vacasAdultas * 100);
     const crecimientoCP = (crecimientoCabezasCP / vacasAdultas * 100);
 
+    const resumeninputs = [intervaloEntrePartos, rechazoAdultas, mortandadAdultas, mortandadTerneros,
+        mortandadRecria, rechazoRecria, prenezVaquillonas, abortos, edadPartoAnterior,
+        edadPartoActual, hembrasPrimiparas, hembrasMultiparas];
+
+    const resumenresultados = [bajas, vidaUtil, hembrasProporcion, reposicionCP, reposicionLP,
+        crecimientoCP, crecimientoLP];
+
 
     //Datos para validaciones
     let formatoEnteroPositivo = /^[1-9]\d*$/;
@@ -282,7 +289,7 @@ function IngresoDatos() {
                 <h2>Resultados:</h2>
                 <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
                 <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2} />
-                <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} />
+                <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} resumeninputs={resumeninputs} resumenresultados={resumenresultados} />
                 <BotonReset />
             </div>)}
         </div>
