@@ -69,7 +69,8 @@ function Presentacion() {
                     </button>
                     {mostrarResultados && (<div>
                         <ul>
-                            <li>Porcentaje anual de bajas y duración de las vacas</li>
+                            <li>Porcentaje anual de bajas</li>
+                            <li>Duración media estimada de las vacas</li>
                             <li>Porcentaje anual de reposición efectiva de corto y largo plazo</li>
                             <li>Gráfico comparando bajas con reposición de corto y largo plazo</li>
                             <li>Relación Reemplazos/Bajas (corto y largo plazo)</li>
