@@ -154,10 +154,10 @@ function IngresoDatos() {
                         <Tooltip anchorSelect="#ipp" place="top">
                             <p><b>Intervalo entre partos:</b></p>
                             <p>Días entre el último parto y el anterior</p>
-                            <p>Promedio para todas las vacas adultas</p>
+                            <p>- Promedio para todas las vacas adultas -</p>
                             <p>Puede usarse <b>Intervalo entre partos futuro:</b></p>
                             <p>Días entre último parto y fecha estimada de próximo parto</p>
-                            <p>Promedio para todas las vacas preñadas</p>
+                            <p>- Promedio para todas las vacas preñadas -</p>
                         </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
@@ -189,40 +189,86 @@ function IngresoDatos() {
                 <h2>Cálculo de reposición anual efectiva:</h2>
                 <form>
                     <div className='seccionFormulario'>
-                        <label>Tasa de mortandad de terneras (%): </label>
+                        <label id="mortern">Tasa de mortandad de terneras (%): </label>
                         <input type='number' value={mortandadTerneros} onChange={handleMortandadTernerosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#mortern" place="top">
+                            <p><b>Tasa de mortandad de terneras (% anual):</b></p>
+                            <p>Terneras muertas / Terneras nacidas * 100</p>
+                            <p>- Se consideran las muertes ocurridas desde</p>
+                            <p>el periparto hasta el fin de la crianza (desleche) -</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Tasa de mortandad de recría (%): </label>
+                        <label id="mortrec">Tasa de mortandad de recría (%): </label>
                         <input type='number' value={mortandadRecria} onChange={handleMortandadRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#mortrec" place="top">
+                            <p><b>Tasa de mortandad de recría (% anual):</b></p>
+                            <p>Hembras recría muertas / Hembras recría totales * 100</p>
+                            <p>- desde la salida de la crianza hasta el ingreso a preparto -</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Tasa de rechazo de recría (%): </label>
+                        <label id="rechrec">Tasa de rechazo de recría (%): </label>
                         <input type='number' value={rechazoRecria} onChange={handlerechazoRecriaChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#rechrec" place="top">
+                            <p><b>Tasa de rechazo de recría (% anual):</b></p>
+                            <p>Hembras recría vendidas / Hembras recría totales * 100</p>
+                            <p>- desde la salida de la crianza hasta el ingreso a preparto -</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Eficiencia de preñez de vaquillonas (%): </label>
+                        <label id="efprenez">Eficiencia de preñez de vaquillonas (%): </label>
                         <input type='number' value={prenezVaquillonas} onChange={handlePrenezVaquillonasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#efprenez" place="top">
+                            <p><b>Eficiencia de preñez en vaquillonas (% anual):</b></p>
+                            <p>Vaquillonas preñadas / Vaquillonas liberadas a servicio * 100</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Tasa general de abortos (%): </label>
+                        <label id="abortos">Tasa general de abortos (%): </label>
                         <input type='number' value={abortos} onChange={handleAbortosChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#abortos" place="top">
+                            <p><b>Tasa general de abortos (% anual):</b></p>
+                            <p>Abortos / Preñeces confirmadas * 100</p>
+                            <p>- Se refiere a la suma de los abortos:</p>
+                            <p>vistos, detectados por tacto o ecografía,</p>
+                            <p>vacas con confirmación de preñez que luego</p>
+                            <p>no paren en la fecha prevista -</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Edad al primer parto año anterior (meses): </label>
+                        <label id="edadant">Edad al primer parto año anterior (meses): </label>
                         <input type='number' value={edadPartoAnterior} onChange={handleEdadPartoAnteriorChange} placeholder='Ingresar un valor en meses (12 - 48)' />
+                        <Tooltip anchorSelect="#edadant" place="top">
+                            <p><b>Edad al primer parto (expresada en meses):</b></p>
+                            <p>Promedio para las vaquillonas del año anterior</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Edad al primer parto año actual (meses): </label>
+                        <label id="edadactual">Edad al primer parto año actual (meses): </label>
                         <input type='number' value={edadPartoActual} onChange={handleEdadPartoActualChange} placeholder='Ingresar un valor en meses (12 - 48)' />
+                        <Tooltip anchorSelect="#edadactual" place="top">
+                            <p><b>Edad al primer parto (expresada en meses):</b></p>
+                            <p>Promedio para las vaquillonas del año en curso</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Proporción crías hembras (primíparas) (%): </label>
+                        <label id="hembrasprim">Proporción crías hembras (primíparas) (%): </label>
                         <input type='number' value={hembrasPrimiparas} onChange={handleHembrasPrimiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#hembrasprim" place="top">
+                            <p><b>Proporción de crías hembras (% anual):</b></p>
+                            <p>Para el grupo de primíparas (vaquillonas de 1er parto)</p>
+                            <p>- Puede ser mayor al 50% si se utiliza semen sexado -</p>
+                        </Tooltip>
                     </div>
                     <div className='seccionFormulario'>
-                        <label>Proporción crías hembras (multíparas) (%): </label>
+                        <label id="hembrasmult">Proporción crías hembras (multíparas) (%): </label>
                         <input type='number' value={hembrasMultiparas} onChange={handleHembrasMultiparasChange} placeholder='Ingresar un porcentaje (0 - 100)' />
+                        <Tooltip anchorSelect="#hembrasmult" place="top">
+                            <p><b>Proporción de crías hembras (% anual):</b></p>
+                            <p>Para el grupo de multíparas (desde 2do parto en adelante)</p>
+                            <p>- Puede ser mayor al 50% si se utiliza semen sexado -</p>
+                        </Tooltip>
                     </div>
                 </form>
                 {mostrarSeccion3 === false && (<div>
