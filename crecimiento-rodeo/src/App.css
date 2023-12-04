@@ -23,7 +23,7 @@ body {
   color:rgb(29, 29, 53);
 }
 
-.seccion, .opciones {
+.seccion {
   margin: 10px;
   padding: 5px;
   border: solid 2px rgb(35, 35, 104);
@@ -32,6 +32,10 @@ body {
 
 .opciones {
   font-size: small;
+  background-color: rgba(255,255,255,0.5);
+  padding: 1.5px;
+  border-radius: 10px;
+  margin: 1.5px;
 }
 
 button {
@@ -138,9 +142,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   background-color: rgba(255,255,255,0.5);
-  padding: 1.5px;
   border-radius: 10px;
-  margin: 1.5px;
   max-width: 380px;
 }
 

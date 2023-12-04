@@ -22,10 +22,10 @@ function Resumen(props) {
                     <p>Tasa mortandad terneras (%):</p>
                     <p>Tasa mortandad recría (%):</p>
                     <p>Tasa rechazo recría (%):</p>
-                    <p>Eficiencia preñez vaquillonas (%):</p>
+                    <p>Tasa preñez vaquillonas (%):</p>
                     <p>Tasa general abortos (%):</p>
-                    <p>Edad 1er parto año anterior (meses):</p>
-                    <p>Edad 1er parto año actual (meses):</p>
+                    <p>Meses al 1er parto año anterior:</p>
+                    <p>Meses al 1er parto año actual:</p>
                     <p>Crías hembras (primíparas) (%):</p>
                     <p>Crías hembras (multíparas) (%):</p>
                     <br></br>
@@ -33,8 +33,8 @@ function Resumen(props) {
                     <p>Bajas anuales (%):</p>
                     <p>Vida útil media (lactancias):</p>
                     <p>Crías hembras global (%):</p>
-                    <p>Reposición anual corto plazo (%):</p>
-                    <p>Reposición anual largo plazo (%):</p>
+                    <p>Reposición anual CP (%):</p>
+                    <p>Reposición anual LP (%):</p>
                     <p>Crecimiento anual rodeo CP (%):</p>
                     <p>Crecimiento anual rodeo LP (%):</p>
                 </div>
