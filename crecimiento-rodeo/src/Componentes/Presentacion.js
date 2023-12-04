@@ -77,9 +77,10 @@ function Presentacion() {
                             <li>Relación Reemplazos/Bajas (corto y largo plazo)</li>
                             <li>Crecimiento porcentual anual del rodeo (corto y largo plazo)</li>
                             <li>Gráfico de evolución comparada a cinco años (para tres estados diferentes del rodeo y partiendo del número de vacas elegido por el usuario)</li>
+                            <li>Resumen de inputs y resultados (comparación de los tres estados)</li>                      
                         </ul>
-                        <p>En este último gráfico los tres estados toman por defecto los valores de la primera simulación terminada. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en un estado y visualizar su curva de evolución.</p>
-                        <p>Se podrá generar un reporte en formato PDF ingresando datos adicionales incluido un email válido al que será enviado dicho reporte.</p>
+                        <p>Tanto para el gráfico de evolución comparada como para el resumen los tres estados toman por defecto los valores de la primera simulación terminada. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en un estado visualizando su curva de evolución y sus valores en el resumen.</p>
+                        <p>Se podrá generar un reporte en formato PDF ingresando datos adicionales incluido un email válido al que será enviado dicho reporte (en desarrollo).</p>
                     </div>)}
                     <br></br>
                     <button onClick={manejarOnClick5} className='mostrar'>
@@ -91,6 +92,7 @@ function Presentacion() {
                             <li>Detección de puntos críticos</li>
                             <li>¿Qué pasaría si...? (pruebas)</li>
                             <li>Selección de dos alternativas exitosas (Estados 2 y 3)</li>
+                            <li>Análisis de los resultados y ajustes</li>
                             <li>Emisión de reporte final</li>
                         </ol>
                     </div>)}
@@ -100,6 +102,8 @@ function Presentacion() {
                     </button>
                     {mostrarTerminos && (<div>
                         <p>Debido a la gran cantidad de variables involucradas en la selección de datos de entrada, la interpretación de resultados y las aplicaciones de esta herramienta en general, el usuario asume toda la responsabilidad por su uso.</p>
+                        <p>El uso de esta aplicación es libre, gratuito e irrestricto para productores lecheros y estudiantes.</p>
+                        <p>Su utilización para cualquier fin por parte de investigadores, desarrolladores, profesionales agropecuarios y cualquier otro usuario no especificado aquí, debe hacerse citando la fuente y respetando los derechos del autor.</p>
                     </div>)}
 
                 </div>
