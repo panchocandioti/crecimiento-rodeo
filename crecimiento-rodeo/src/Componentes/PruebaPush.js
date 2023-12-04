@@ -87,40 +87,41 @@ function PruebaPush(props) {
     }
 
     return (
-        <div className='opciones'>
-            <h2>EVOLUCIÓN COMPARADA</h2>
+        <div className='opciones resultados'>
+            <h4>EVOLUCIÓN COMPARADA</h4>
             <div className='subseccion'>
                 <label>Vacas inicio: </label>
                 <input type='number' value={vacas} onChange={handleVacasChange} style={{ width: "65px", marginLeft: "4px" }} />
-                <button onClick={handleClickVacas}>Cambiar</button>
+                <button className="button" onClick={handleClickVacas}>Cambiar</button>
             </div>
             {validacion === false && (<div>
                 <h3 style={{ color: "darkred", backgroundColor: "lightpink" }}>Revisar el valor ingresado</h3>
             </div>)}
             {validacion && (<div>
                 <div className='subseccion'>
-                    <button onClick={() => agregarValores1()}>Estado 1</button>
+                    <button className="button" onClick={() => agregarValores1()}>Estado 1</button>
                     <p>CRECIMIENTO - CP: {(valores1[0]).toFixed(1)}% | LP: {(valores1[1]).toFixed(1)}%</p>
                 </div>
                 <div className='subseccion'>
-                    <button onClick={() => agregarValores2()}>Estado 2</button>
+                    <button className="button" onClick={() => agregarValores2()}>Estado 2</button>
                     <p>CRECIMIENTO - CP: {(valores2[0]).toFixed(1)}% | LP: {(valores2[1]).toFixed(1)}%</p>
                 </div>
                 <div className='subseccion'>
-                    <button onClick={() => agregarValores3()}>Estado 3</button>
+                    <button className="button" onClick={() => agregarValores3()}>Estado 3</button>
                     <p>CRECIMIENTO - CP: {(valores3[0]).toFixed(1)}% | LP: {(valores3[1]).toFixed(1)}%</p>
                 </div>
                 <GraficoEvolucion linea1={linea1} linea2={linea2} linea3={linea3} />
                 <div className='subseccion'>
-                    <button onClick={() => handleMostrarResumen()}>
+                    <button className="button" onClick={() => handleMostrarResumen()}>
                         {mostrarResumen === true ? "Ocultar resumen" : "Mostrar resumen"}
                     </button>
                 </div>
                 {mostrarResumen === true && (<Resumen resumeninputs1={resumeninputs1} resumeninputs2={resumeninputs2}
                     resumeninputs3={resumeninputs3} resumenresultados1={resumenresultados1}
                     resumenresultados2={resumenresultados2} resumenresultados3={resumenresultados3} />)}
-            </div>)}
-        </div>)
+            </div>)
+            }
+        </div >)
 }
 
 export default PruebaPush

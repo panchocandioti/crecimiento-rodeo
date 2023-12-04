@@ -105,10 +105,10 @@ function Presentacion() {
                 </div>
             </div>)}
             <div>
-                <button onClick={manejarOnClick1}>
+                <button className="button" onClick={manejarOnClick1}>
                     {mostrarInstrucciones === true ? "Ocultar introducción" : "Mostrar introducción"}
                 </button>
-                {comenzar === false && (<button onClick={manejarOnclick2}>
+                {comenzar === false && (<button className="button" onClick={manejarOnclick2}>
                     Aceptar términos y comenzar
                 </button>)}
             </div>

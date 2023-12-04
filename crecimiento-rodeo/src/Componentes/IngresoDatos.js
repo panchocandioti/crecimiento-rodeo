@@ -153,7 +153,7 @@ function IngresoDatos() {
     return (
         <div>
             <div className='seccion'>
-                <h2>Cálculo de bajas anuales y vida útil de vacas adultas:</h2>
+                <h3>Cálculo de bajas anuales y vida útil de vacas adultas:</h3>
                 <form>
                     <div className='seccionFormulario'>
                         <label id="ipp">Intervalo entre partos (días): </label>
@@ -193,7 +193,7 @@ function IngresoDatos() {
                 </div>)}
             </div>
             {mostrarSeccion2 && (<div className='seccion'>
-                <h2>Cálculo de reposición anual efectiva:</h2>
+                <h3>Cálculo de reposición anual efectiva:</h3>
                 <form>
                     <div className='seccionFormulario'>
                         <label id="mortern">Tasa de mortandad de terneras (%): </label>
@@ -286,7 +286,7 @@ function IngresoDatos() {
             </div>
             )}
             {mostrarSeccion3 && (<div className='seccion'>
-                <h2>Resultados:</h2>
+                <h3>Resultados:</h3>
                 <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
                 <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2} />
                 <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} resumeninputs={resumeninputs} resumenresultados={resumenresultados} />

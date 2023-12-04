@@ -8,8 +8,8 @@ function VidaUtilVacas(props) {
                 <h3 style={{color: "darkred", backgroundColor: "lightpink"}}>Revisar los valores ingresados</h3>
             </div>)}
             {props.validacion1 && (<div className='resultados'>
-                <h3>BAJAS ANUALES: <span style={{ color: 'red' }}>{props.bajas}%</span></h3>
-                <h3>VIDA ÚTIL MEDIA: <span style={{ color: 'red' }}>{props.vidaUtil} lactancias</span></h3>
+                <h4>BAJAS ANUALES: <span style={{ color: 'red' }}>{props.bajas}%</span></h4>
+                <h4>VIDA ÚTIL MEDIA: <span style={{ color: 'red' }}>{props.vidaUtil} lactancias</span></h4>
             </div>)}
         </div>
     )

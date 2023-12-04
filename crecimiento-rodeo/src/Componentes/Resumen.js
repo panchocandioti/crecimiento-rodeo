@@ -11,8 +11,8 @@ function Resumen(props) {
     const resultados3 = props.resumenresultados3;
 
     return (
-        <div >
-            <h2>RESUMEN</h2>
+        <div className='resultados'>
+            <h4>RESUMEN</h4>
 
             <table class="table table-hover">
                 <thead>
