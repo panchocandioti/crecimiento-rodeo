@@ -10,35 +10,36 @@ function Resumen(props) {
     const resultados3 = props.resumenresultados3;
 
     return (
-        <div>
+        <div >
             <h2>RESUMEN</h2>
+            <div id="marcoresumen">
             <div className='resumencontainer'>
                 <div className='resumen'>
-                    <h3>INPUTS</h3>
+                    <h4>INPUTS</h4>
                     <p>Intervalo entre partos (meses):</p>
-                    <p>Tasa de rechazo de adultas (%):</p>
-                    <p>Tasa de mortandad de adultas (%):</p>
-                    <p>Tasa de mortandad de terneras (%):</p>
-                    <p>Tasa de mortandad de recría (%):</p>
-                    <p>Tasa de rechazo de recría (%):</p>
-                    <p>Eficiencia de prñez de vaquillonas (%):</p>
-                    <p>Tasa general de abortos (%):</p>
-                    <p>Edad al primer parto año anterior (meses):</p>
-                    <p>Edad al primer parto año actual (meses):</p>
-                    <p>Proporción crías hembras (primíparas) (%):</p>
-                    <p>Proporción crías hembras (multíparas) (%):</p>
+                    <p>Tasa rechazo adultas (%):</p>
+                    <p>Tasa mortandad adultas (%):</p>
+                    <p>Tasa mortandad terneras (%):</p>
+                    <p>Tasa mortandad recría (%):</p>
+                    <p>Tasa rechazo recría (%):</p>
+                    <p>Eficiencia preñez vaquillonas (%):</p>
+                    <p>Tasa general abortos (%):</p>
+                    <p>Edad 1er parto año anterior (meses):</p>
+                    <p>Edad 1er parto año actual (meses):</p>
+                    <p>Crías hembras (primíparas) (%):</p>
+                    <p>Crías hembras (multíparas) (%):</p>
                     <br></br>
-                    <h3>RESULTADOS</h3>
+                    <h4>RESULTADOS</h4>
                     <p>Bajas anuales (%):</p>
                     <p>Vida útil media (lactancias):</p>
-                    <p>Proporción global crías hembras (%):</p>
-                    <p>Reposición anual de corto plazo (%):</p>
-                    <p>Reposición anual de largo plazo (%):</p>
-                    <p>Crecimiento anual de rodeo CP (%):</p>
-                    <p>Crecimiento anual de rodeo LP (%):</p>
+                    <p>Crías hembras global (%):</p>
+                    <p>Reposición anual corto plazo (%):</p>
+                    <p>Reposición anual largo plazo (%):</p>
+                    <p>Crecimiento anual rodeo CP (%):</p>
+                    <p>Crecimiento anual rodeo LP (%):</p>
                 </div>
                 <div className='resumen'>
-                    <h3>ESTADO 1</h3>
+                    <h4>EST.1</h4>
                     <p>{inputs1[0]}</p>
                     <p>{inputs1[1]}</p>
                     <p>{inputs1[2]}</p>
@@ -53,7 +54,7 @@ function Resumen(props) {
                     <p>{inputs1[11]}</p>
                     <p>{inputs1[12]}</p>
                     <br></br>
-                    <h3>ESTADO 1</h3>
+                    <h4>EST.1</h4>
                     <p>{parseFloat(resultados1[0]).toFixed(1)}</p>
                     <p>{parseFloat(resultados1[1]).toFixed(1)}</p>
                     <p>{parseFloat(resultados1[2]*100).toFixed(1)}</p>
@@ -63,7 +64,7 @@ function Resumen(props) {
                     <p>{parseFloat(resultados1[6]).toFixed(1)}</p>
                 </div>
                 <div className='resumen'>
-                    <h3>ESTADO 2</h3>
+                    <h4>EST.2</h4>
                     <p>{inputs2[0]}</p>
                     <p>{inputs2[1]}</p>
                     <p>{inputs2[2]}</p>
@@ -78,7 +79,7 @@ function Resumen(props) {
                     <p>{inputs2[11]}</p>
                     <p>{inputs2[12]}</p>
                     <br></br>
-                    <h3>ESTADO 2</h3>
+                    <h4>EST.2</h4>
                     <p>{parseFloat(resultados2[0]).toFixed(1)}</p>
                     <p>{parseFloat(resultados2[1]).toFixed(1)}</p>
                     <p>{parseFloat(resultados2[2]*100).toFixed(1)}</p>
@@ -88,7 +89,7 @@ function Resumen(props) {
                     <p>{parseFloat(resultados2[6]).toFixed(1)}</p>
                 </div>
                 <div className='resumen'>
-                    <h3>ESTADO 3</h3>
+                    <h4>EST.3</h4>
                     <p>{inputs3[0]}</p>
                     <p>{inputs3[1]}</p>
                     <p>{inputs3[2]}</p>
@@ -103,7 +104,7 @@ function Resumen(props) {
                     <p>{inputs3[11]}</p>
                     <p>{inputs3[12]}</p>
                     <br></br>
-                    <h3>ESTADO 3</h3>
+                    <h4>EST.3</h4>
                     <p>{parseFloat(resultados3[0]).toFixed(1)}</p>
                     <p>{parseFloat(resultados3[1]).toFixed(1)}</p>
                     <p>{parseFloat(resultados3[2]*100).toFixed(1)}</p>
@@ -112,6 +113,7 @@ function Resumen(props) {
                     <p>{parseFloat(resultados3[5]).toFixed(1)}</p>
                     <p>{parseFloat(resultados3[6]).toFixed(1)}</p>
                 </div>
+            </div>
             </div>
         </div>
     )
