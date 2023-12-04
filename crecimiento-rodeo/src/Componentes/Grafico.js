@@ -33,8 +33,12 @@ function Grafico(props) {
     }
 
     return (
-        <div className="seccion" style={{ position: "relative", height: "15vh" }}>
-            {props.validacion1 === true && props.validacion2 === true && (<Bar data={data} options={options}></Bar>)}
+        <div className='resultados'>
+            <div className='grafico'>
+                <div style={{ position: "relative", height: "15vh", minWidth: "60vw" }}>
+                    {props.validacion1 === true && props.validacion2 === true && (<Bar data={data} options={options}></Bar>)}
+                </div>
+            </div>
         </div>
     )
 }

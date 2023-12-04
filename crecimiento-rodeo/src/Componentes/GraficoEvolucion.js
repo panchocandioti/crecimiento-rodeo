@@ -65,8 +65,10 @@ function GraficoEvolucion(props) {
     }
 
     return (
-        <div className="seccion" style={{ position: "relative", height: "28vh" }}>
-            <Line data={data} options={options}></Line>
+        <div className='grafico'>
+            <div style={{ position: "relative", height: "28vh", minWidth: "60vw" }}>
+                <Line data={data} options={options}></Line>
+            </div>
         </div>
     )
 }
