@@ -16,27 +16,27 @@ function Resumen(props) {
             <div className='resumencontainer'>
                 <div className='resumen'>
                     <h4>INPUTS</h4>
-                    <p>Intervalo entre partos (meses):</p>
-                    <p>Tasa rechazo adultas (%):</p>
-                    <p>Tasa mortandad adultas (%):</p>
-                    <p>Tasa mortandad terneras (%):</p>
-                    <p>Tasa mortandad recría (%):</p>
-                    <p>Tasa rechazo recría (%):</p>
-                    <p>Tasa preñez vaquillonas (%):</p>
-                    <p>Tasa general abortos (%):</p>
-                    <p>Meses al 1er parto año anterior:</p>
-                    <p>Meses al 1er parto año actual:</p>
-                    <p>Crías hembras (primíparas) (%):</p>
-                    <p>Crías hembras (multíparas) (%):</p>
+                    <p>Interv. entre partos (meses):</p>
+                    <p>Rechazo adultas (%):</p>
+                    <p>Mortandad adultas (%):</p>
+                    <p>Mortandad terneras (%):</p>
+                    <p>Mortandad recría (%):</p>
+                    <p>Rechazo recría (%):</p>
+                    <p>Preñez vaquillonas (%):</p>
+                    <p>Abortos (%):</p>
+                    <p>Meses 1° parto año previo:</p>
+                    <p>Meses 1° parto año actual:</p>
+                    <p>Crías ♀ (primíparas) (%):</p>
+                    <p>Crías ♀ (multíparas) (%):</p>
                     <br></br>
                     <h4>RESULTADOS</h4>
                     <p>Bajas anuales (%):</p>
-                    <p>Vida útil media (lactancias):</p>
-                    <p>Crías hembras global (%):</p>
+                    <p>Duración vacas (lactancias):</p>
+                    <p>Crías ♀ global (%):</p>
                     <p>Reposición anual CP (%):</p>
                     <p>Reposición anual LP (%):</p>
-                    <p>Crecimiento anual rodeo CP (%):</p>
-                    <p>Crecimiento anual rodeo LP (%):</p>
+                    <p>Crecimiento rodeo CP (%):</p>
+                    <p>Crecimiento rodeo LP (%):</p>
                 </div>
                 <div className='resumen'>
                     <h4>EST.1</h4>
