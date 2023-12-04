@@ -42,6 +42,7 @@ function Presentacion() {
         <div>
             <header className="App-header">
                 <img src={MiLecheria} id="MiLecheria"></img>
+                <br></br>
                 <h1>CRECIMIENTO DEL RODEO LECHERO</h1>
             </header>
             {mostrarInstrucciones && (<div className="seccion">
