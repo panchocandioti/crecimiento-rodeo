@@ -1,5 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
+import { PDFViewer } from '@react-pdf/renderer';
+import ReportePDF from './ReportePDF';
 
 function Resumen(props) {
 
@@ -14,7 +16,7 @@ function Resumen(props) {
         <div className='resultados'>
             <h4>RESUMEN</h4>
             <div className='table-responsive'>
-                <table class="table table-hover">
+                <table className="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">INPUTS</th>
@@ -100,7 +102,7 @@ function Resumen(props) {
                 </table>
             </div>
             <div className='table-responsive'>
-                <table class="table table-hover">
+                <table className="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">RESULTADOS</th>
@@ -154,6 +156,13 @@ function Resumen(props) {
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div>
+                <PDFViewer width="800px" height="600px">
+                    <ReportePDF inputs1={inputs1} inputs2={inputs2} inputs3={inputs3} resultados1={resultados1} 
+                        resultados2={resultados2} resultados3={resultados3}
+                    />
+                </PDFViewer>
             </div>
         </div>
     )
