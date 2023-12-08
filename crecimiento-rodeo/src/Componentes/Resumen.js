@@ -158,7 +158,7 @@ function Resumen(props) {
                 </table>
             </div>
             <div>
-                <PDFViewer width="800px" height="600px">
+                <PDFViewer width="800px" height="650px">
                     <ReportePDF inputs1={inputs1} inputs2={inputs2} inputs3={inputs3} resultados1={resultados1} 
                         resultados2={resultados2} resultados3={resultados3}
                     />
