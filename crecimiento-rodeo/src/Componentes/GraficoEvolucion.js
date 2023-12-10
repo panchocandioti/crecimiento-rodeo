@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import jsPDF from 'jspdf';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -22,12 +23,11 @@ ChartJS.register(
 );
 
 function GraficoEvolucion(props) {
-
     const [vacasTotales1, setVacasTotales1] = useState([]);
     const [vacasTotales2, setVacasTotales2] = useState([]);
     const [vacasTotales3, setVacasTotales3] = useState([]);
-
-    let ref = useRef(null);
+    const [isComponentMounted, setIsComponentMounted] = useState(false);
+    const chartRef = useRef(null);
 
     useEffect(() => {
         setVacasTotales1((prevState) => props.linea1);
@@ -40,6 +40,11 @@ function GraficoEvolucion(props) {
     useEffect(() => {
         setVacasTotales3((prevState) => props.linea3);
     }, [props.linea3]);
+
+    useEffect(() => {
+        setIsComponentMounted(true);
+        return () => setIsComponentMounted(false);
+    }, []);
 
     const data = {
         labels: ["Año 0", "Año 1", "Año 2", "Año 3", "Año 4", "Año 5"],
@@ -66,21 +71,44 @@ function GraficoEvolucion(props) {
         maintainAspectRatio: false,
     }
 
-    const descargaGrafico = useCallback(() => {
-        const link = document.createElement("a");
-        link.download = "GraficoEvolucion.png";
-        link.href = ref.current.toBase64Image();
-        link.click();
-    }, []);
+    const descargaGraficoPDF = useCallback(async () => {
+        if (chartRef.current && isComponentMounted) {
+            // Agrega un pequeño retraso (por ejemplo, 500 ms) antes de realizar la captura de pantalla
+            await new Promise(resolve => setTimeout(resolve, 500));
+    
+            // Intenta capturar la imagen del gráfico utilizando toBase64Image()
+            const chartImageBase64 = chartRef.current.toBase64Image();
+            
+            // Verifica si la cadena base64 es válida antes de continuar
+            if (chartImageBase64 && chartImageBase64.startsWith('data:image/png')) {
+                const pdf = new jsPDF();
+
+            // Agrega título
+            pdf.setFontSize(15);
+            pdf.text("GRÁFICO - Evolución comparada - Crecimiento del rodeo lechero", 15, 20);
+
+            // Agrega la imagen del gráfico
+            pdf.addImage(chartImageBase64, 'PNG', 15, 30, 180, 70); // A4 size: 210mm x 297mm
+
+            // Agrega pie de página
+            pdf.setFontSize(10);
+            pdf.text("Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com", 15, 115);
+
+            pdf.save('GraficoEvolucion.pdf');
+            } else {
+                console.error('Error al capturar la imagen del gráfico.');
+            }
+        }
+    }, [isComponentMounted]);
 
     return (
         <div className='grafico'>
             <div style={{ position: "relative", height: "28vh", minWidth: "60vw", backgroundColor: "white" }}>
-                <Line data={data} options={options} ref={ref}></Line>
+                <Line data={data} options={options} ref={chartRef}></Line>
             </div>
-            <button type='button' className='button' onClick={descargaGrafico}>Descargar gráfico</button>
+            <a type='button' className='button' onClick={descargaGraficoPDF}>Descargar PDF</a>
         </div>
-    )
+    );
 }
 
 export default GraficoEvolucion;

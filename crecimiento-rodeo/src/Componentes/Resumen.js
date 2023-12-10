@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import { PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import ReportePDF from './ReportePDF';
 
 function Resumen(props) {
@@ -158,11 +158,9 @@ function Resumen(props) {
                 </table>
             </div>
             <div>
-                <PDFViewer width="800px" height="650px">
-                    <ReportePDF inputs1={inputs1} inputs2={inputs2} inputs3={inputs3} resultados1={resultados1} 
-                        resultados2={resultados2} resultados3={resultados3}
-                    />
-                </PDFViewer>
+                <PDFDownloadLink document={<ReportePDF inputs1={inputs1} inputs2={inputs2} inputs3={inputs3} resultados1={resultados1} resultados2={resultados2} resultados3={resultados3} />} fileName="resumen.pdf">
+                    {({ blob, url, loading, error }) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
+                </PDFDownloadLink>
             </div>
         </div>
     )
