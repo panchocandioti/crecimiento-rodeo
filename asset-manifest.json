@@ -1,7 +1,10 @@
 {
   "files": {
     "main.css": "/crecimiento-rodeo/static/css/main.02dddeeb.css",
-    "main.js": "/crecimiento-rodeo/static/js/main.528f893d.js",
+    "main.js": "/crecimiento-rodeo/static/js/main.0da21699.js",
+    "static/js/498.0f2c7a73.chunk.js": "/crecimiento-rodeo/static/js/498.0f2c7a73.chunk.js",
+    "static/js/703.8edc75b9.chunk.js": "/crecimiento-rodeo/static/js/703.8edc75b9.chunk.js",
+    "static/js/513.d919347f.chunk.js": "/crecimiento-rodeo/static/js/513.d919347f.chunk.js",
     "static/js/787.046abf49.chunk.js": "/crecimiento-rodeo/static/js/787.046abf49.chunk.js",
     "static/media/vaquitas.jpg": "/crecimiento-rodeo/static/media/vaquitas.d2be3faf24f6817edd18.jpg",
     "static/media/MiLecheria.jpg": "/crecimiento-rodeo/static/media/MiLecheria.589f48ee1baa602c7355.jpg",
@@ -9,11 +12,14 @@
     "static/media/LogoML1.png": "/crecimiento-rodeo/static/media/LogoML1.bdb832ca919f563f2742.png",
     "index.html": "/crecimiento-rodeo/index.html",
     "main.02dddeeb.css.map": "/crecimiento-rodeo/static/css/main.02dddeeb.css.map",
-    "main.528f893d.js.map": "/crecimiento-rodeo/static/js/main.528f893d.js.map",
+    "main.0da21699.js.map": "/crecimiento-rodeo/static/js/main.0da21699.js.map",
+    "498.0f2c7a73.chunk.js.map": "/crecimiento-rodeo/static/js/498.0f2c7a73.chunk.js.map",
+    "703.8edc75b9.chunk.js.map": "/crecimiento-rodeo/static/js/703.8edc75b9.chunk.js.map",
+    "513.d919347f.chunk.js.map": "/crecimiento-rodeo/static/js/513.d919347f.chunk.js.map",
     "787.046abf49.chunk.js.map": "/crecimiento-rodeo/static/js/787.046abf49.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.02dddeeb.css",
-    "static/js/main.528f893d.js"
+    "static/js/main.0da21699.js"
   ]
 }
