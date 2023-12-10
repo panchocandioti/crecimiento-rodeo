@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -26,6 +26,8 @@ function GraficoEvolucion(props) {
     const [vacasTotales1, setVacasTotales1] = useState([]);
     const [vacasTotales2, setVacasTotales2] = useState([]);
     const [vacasTotales3, setVacasTotales3] = useState([]);
+
+    let ref = useRef(null);
 
     useEffect(() => {
         setVacasTotales1((prevState) => props.linea1);
@@ -64,11 +66,19 @@ function GraficoEvolucion(props) {
         maintainAspectRatio: false,
     }
 
+    const descargaGrafico = useCallback(() => {
+        const link = document.createElement("a");
+        link.download = "GraficoEvolucion.png";
+        link.href = ref.current.toBase64Image();
+        link.click();
+    }, []);
+
     return (
         <div className='grafico'>
-            <div style={{ position: "relative", height: "28vh", minWidth: "60vw" }}>
-                <Line data={data} options={options}></Line>
+            <div style={{ position: "relative", height: "28vh", minWidth: "60vw", backgroundColor: "white" }}>
+                <Line data={data} options={options} ref={ref}></Line>
             </div>
+            <button type='button' className='button' onClick={descargaGrafico}>Descargar gráfico</button>
         </div>
     )
 }

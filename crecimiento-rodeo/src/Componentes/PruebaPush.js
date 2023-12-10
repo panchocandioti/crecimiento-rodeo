@@ -121,7 +121,7 @@ function PruebaPush(props) {
                     resumenresultados2={resumenresultados2} resumenresultados3={resumenresultados3} />)}
             </div>)
             }
-        </div >)
+        </div>)
 }
 
 export default PruebaPush
