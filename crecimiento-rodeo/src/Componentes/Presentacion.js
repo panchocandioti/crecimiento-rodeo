@@ -98,7 +98,7 @@ function Presentacion() {
                             <li>¿Qué pasaría si...? (pruebas)</li>
                             <li>Selección de dos alternativas exitosas (Estados 2 y 3)</li>
                             <li>Análisis de los resultados y ajustes</li>
-                            <li>Emisión de reporte final</li>
+                            <li>Descarga versiones finales de gráfico de evolución comparada y resumen</li>
                         </ol>
                     </div>)}
                     <br></br>
