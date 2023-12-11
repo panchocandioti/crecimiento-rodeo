@@ -12,31 +12,36 @@ function Presentacion() {
     const [mostrarResultados, setMostrarResultados] = useState(false);
     const [mostrarSecuencia, setMostrarSecuencia] = useState(false);
     const [mostrarTerminos, setMostrarTerminos] = useState(false);
+    const [mostrarRegistro, setMostrarRegistro] = useState(false);
 
 
     const manejarOnClick1 = () => {
         setMostrarInstrucciones(!mostrarInstrucciones);
-    }
+    };
 
     const manejarOnclick2 = () => {
         setComenzar(true);
-    }
+    };
 
     const manejarOnClick3 = () => {
         setMostrarGeneralidades(!mostrarGeneralidades);
-    }
+    };
 
     const manejarOnClick4 = () => {
         setMostrarResultados(!mostrarResultados);
-    }
+    };
 
     const manejarOnClick5 = () => {
         setMostrarSecuencia(!mostrarSecuencia);
-    }
+    };
 
     const manejarOnClick6 = () => {
         setMostrarTerminos(!mostrarTerminos);
-    }
+    };
+
+    const manejarOnClick7 = () => {
+        setMostrarRegistro(!mostrarRegistro);
+    };
 
     return (
         <div>
@@ -79,8 +84,8 @@ function Presentacion() {
                             <li>Gráfico de evolución comparada a cinco años (para tres estados diferentes del rodeo y partiendo del número de vacas elegido por el usuario)</li>
                             <li>Resumen de inputs y resultados (comparación de los tres estados)</li>                      
                         </ul>
-                        <p>Tanto para el gráfico de evolución comparada como para el resumen los tres estados toman por defecto los valores de la primera simulación terminada. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en un estado visualizando su curva de evolución y sus valores en el resumen.</p>
-                        <p>Se podrá generar un reporte en formato PDF ingresando datos adicionales incluido un email válido al que será enviado dicho reporte (en desarrollo).</p>
+                        <p>Tanto para el gráfico de evolución comparada como para el resumen los tres estados toman por defecto los valores de la primera simulación terminada. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en cualquier estado visualizando su curva de evolución y sus valores en el resumen.</p>
+                        <p>Se podrán descargar archivos PDF tanto del gráfico de evolución comparada como del resumen de inputs y resultados.</p>
                     </div>)}
                     <br></br>
                     <button onClick={manejarOnClick5} className='mostrar'>
@@ -105,7 +110,14 @@ function Presentacion() {
                         <p>El uso de esta aplicación es libre, gratuito e irrestricto para productores lecheros y estudiantes.</p>
                         <p>Su utilización para cualquier fin por parte de investigadores, desarrolladores, profesionales agropecuarios y cualquier otro usuario no especificado aquí, debe hacerse citando la fuente y respetando los derechos del autor.</p>
                     </div>)}
-
+                    <br></br>
+                    <button onClick={manejarOnClick7} className='mostrar'>
+                        {mostrarRegistro === true ? "REGISTRARSE (opcional) ˄ " : "REGISTRARSE (opcional) ˅ "}
+                    </button>
+                    {mostrarRegistro && (<div>
+                        <p>Regístrese para recibir notificaciones de actualizaciones y novedades de <b>MiLecheria.ar</b> haciendo click en el enlace. El formulario de registro se abrirá en otra ventana. Luego de registrarse regrese a esta ventana para continuar. <a href='https://forms.gle/Q12JUazDxuxbRSP7A' target="_blank" rel="noopener noreferrer">Ir al formulario de registro.</a></p>
+                        
+                    </div>)}
                 </div>
             </div>)}
             <div>
