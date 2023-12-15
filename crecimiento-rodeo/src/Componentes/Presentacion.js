@@ -59,13 +59,18 @@ function Presentacion() {
                     {mostrarGeneralidades && (<div>
                         <p>Durante un ciclo anual un rodeo lechero crece cuando las vacas adultas que finalizan su vida útil (muerte y/o rechazo) son menos que las vacas nuevas (vaquillonas de reemplazo) que inician su vida productiva, finalizando el período con más vacas adultas que al comienzo.
                             Esto debería lograrse como resultado de la dinámica propia del rodeo (crecimiento genuino) sin recurrir a compra de vacas y/o vaquillonas.</p>
+
                         <p>Objetivos de esta aplicación:</p>
                         <ul>
+                            <li>Calcular el crecimiento genuino del rodeo lechero</li>
+                            <li>Simular su evolución a cinco años</li>
+                            <li>Evaluar cómo impactan determinados cambios en los parámetros del rodeo sobre la evolución del mismo</li>
+                            <li>Comparar los escenarios alternativos con la situación original</li>
                             <li>Despertar interés por la enorme oportunidad que supone el crecimiento del rodeo lechero</li>
                             <li>Contribuir a la comprensión de los parámetros/procesos relacionados</li>
                             <li>Ofrecer una herramienta de cuantificación para uso didáctico y aplicación práctica</li>
                         </ul>
-                        <p>Mediante el uso de esta aplicación web se puede simular el crecimiento genuino de un rodeo lechero ingresando ciertos parámetros del rodeo.</p>
+
                         <p>El ingreso de parámetros está dividido en dos formularios: "Cálculo de bajas anuales y vida útil de vacas adultas" y "Cálculo de reposición anual efectiva". Debe completarse el primero para acceder al segundo.
                             Para cada input puede consultarse una definición simplificada o un breve mensaje de ayuda. Los valores ingresados pueden cambiarse en cualquier momento.</p>
                     </div>)}
@@ -82,7 +87,7 @@ function Presentacion() {
                             <li>Relación Reemplazos/Bajas (corto y largo plazo)</li>
                             <li>Crecimiento porcentual anual del rodeo (corto y largo plazo)</li>
                             <li>Gráfico de evolución comparada a cinco años (para tres estados diferentes del rodeo y partiendo del número de vacas elegido por el usuario)</li>
-                            <li>Resumen de inputs y resultados (comparación de los tres estados)</li>                      
+                            <li>Resumen de inputs y resultados (comparación de los tres estados)</li>
                         </ul>
                         <p>Los tres estados se inician por defecto con los valores de la primera simulación terminada. Esto ocurre tanto el gráfico de evolución comparada como en el resumen. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en cualquier estado visualizando su curva de evolución y sus valores en el resumen.</p>
                         <p>Se podrán descargar archivos PDF tanto del gráfico de evolución comparada como del resumen de inputs y resultados.</p>
@@ -116,7 +121,7 @@ function Presentacion() {
                     </button>
                     {mostrarRegistro && (<div>
                         <p>Regístrese para recibir notificaciones de actualizaciones y novedades de <b>MiLecheria.ar</b> haciendo click en el enlace. El formulario de registro se abrirá en otra ventana. Luego de registrarse regrese a esta ventana para continuar. <a href='https://forms.gle/Q12JUazDxuxbRSP7A' target="_blank" rel="noopener noreferrer">Ir al formulario de registro.</a></p>
-                        
+
                     </div>)}
                 </div>
             </div>)}
