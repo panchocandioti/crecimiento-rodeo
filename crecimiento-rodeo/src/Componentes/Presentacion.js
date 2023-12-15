@@ -57,7 +57,7 @@ function Presentacion() {
                         {mostrarGeneralidades === true ? "Generalidades y objetivos ˄ " : "Generalidades y objetivos ˅ "}
                     </button>
                     {mostrarGeneralidades && (<div>
-                        <p>Durante un ejercio anual un rodeo lechero crece cuando las vacas adultas que finalizan su vida útil (muerte y/o rechazo) son menos que las vacas nuevas (vaquillonas de reemplazo) que inician su vida productiva, finalizando el período con más vacas adultas que al comienzo.
+                        <p>Durante un ciclo anual un rodeo lechero crece cuando las vacas adultas que finalizan su vida útil (muerte y/o rechazo) son menos que las vacas nuevas (vaquillonas de reemplazo) que inician su vida productiva, finalizando el período con más vacas adultas que al comienzo.
                             Esto debería lograrse como resultado de la dinámica propia del rodeo (crecimiento genuino) sin recurrir a compra de vacas y/o vaquillonas.</p>
                         <p>Objetivos de esta aplicación:</p>
                         <ul>
@@ -84,7 +84,7 @@ function Presentacion() {
                             <li>Gráfico de evolución comparada a cinco años (para tres estados diferentes del rodeo y partiendo del número de vacas elegido por el usuario)</li>
                             <li>Resumen de inputs y resultados (comparación de los tres estados)</li>                      
                         </ul>
-                        <p>Tanto para el gráfico de evolución comparada como para el resumen los tres estados toman por defecto los valores de la primera simulación terminada. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en cualquier estado visualizando su curva de evolución y sus valores en el resumen.</p>
+                        <p>Los tres estados se inician por defecto con los valores de la primera simulación terminada. Esto ocurre tanto el gráfico de evolución comparada como en el resumen. Luego de hacer los cambios deseados cualquier situación simulada puede guardarse en cualquier estado visualizando su curva de evolución y sus valores en el resumen.</p>
                         <p>Se podrán descargar archivos PDF tanto del gráfico de evolución comparada como del resumen de inputs y resultados.</p>
                     </div>)}
                     <br></br>
