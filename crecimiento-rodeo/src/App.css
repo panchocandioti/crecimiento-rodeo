@@ -14,7 +14,7 @@
 }
 
 body {
-  background-image: url('./Media/vaquitas.jpg');
+  background-image: url('./Media/vacas_catie.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -26,7 +26,7 @@ body {
   margin: 10px;
   padding: 5px;
   border: solid 2px rgb(35, 35, 104);
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.75);
 }
 
 .grafico {
