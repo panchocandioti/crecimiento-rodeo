@@ -26,8 +26,10 @@ function GraficoEvolucion(props) {
     const [vacasTotales1, setVacasTotales1] = useState([]);
     const [vacasTotales2, setVacasTotales2] = useState([]);
     const [vacasTotales3, setVacasTotales3] = useState([]);
+    const [nombreCaso, setNombreCaso] = useState('')
     const [isComponentMounted, setIsComponentMounted] = useState(false);
     const chartRef = useRef(null);
+    const fechaString = props.fechaString;
 
     useEffect(() => {
         setVacasTotales1((prevState) => props.linea1);
@@ -42,9 +44,13 @@ function GraficoEvolucion(props) {
     }, [props.linea3]);
 
     useEffect(() => {
+        setNombreCaso((prevState) => props.nombreCaso);
+    }, [props.nombreCaso]);
+
+    useEffect(() => {
         setIsComponentMounted(true);
         return () => setIsComponentMounted(false);
-    }, []);
+    }, [props.nombreCaso, props.linea1, props.linea2, props.linea3]);
 
     const data = {
         labels: ["Año 0", "Año 1", "Año 2", "Año 3", "Año 4", "Año 5"],
@@ -85,21 +91,24 @@ function GraficoEvolucion(props) {
 
             // Agrega título
             pdf.setFontSize(15);
-            pdf.text("GRÁFICO - Evolución comparada - Crecimiento del rodeo lechero", 15, 20);
+            pdf.text(nombreCaso, 15, 20);
+
+            pdf.setFontSize(12);
+            pdf.text("GRÁFICO - Evolución comparada - Crecimiento del rodeo lechero - " + fechaString, 15, 30);
 
             // Agrega la imagen del gráfico
-            pdf.addImage(chartImageBase64, 'PNG', 15, 30, 180, 70); // A4 size: 210mm x 297mm
+            pdf.addImage(chartImageBase64, 'PNG', 15, 40, 180, 80); // A4 size: 210mm x 297mm
 
             // Agrega pie de página
             pdf.setFontSize(10);
-            pdf.text("Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com", 15, 115);
+            pdf.text("Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com - MiLecheria.ar", 15, 135);
 
             pdf.save('GraficoEvolucion.pdf');
             } else {
                 console.error('Error al capturar la imagen del gráfico.');
             }
         }
-    }, [isComponentMounted]);
+    }, [isComponentMounted, nombreCaso, fechaString]);
 
     return (
         <div className='grafico'>

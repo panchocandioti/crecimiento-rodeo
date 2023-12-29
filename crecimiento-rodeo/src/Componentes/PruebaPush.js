@@ -20,9 +20,19 @@ function PruebaPush(props) {
     const [vacasInicio, setVacasInicio] = useState(100);
     const [validacion, setValidacion] = useState(true);
     const [mostrarResumen, setMostrarResumen] = useState(false);
-
+    const [nombreCaso, setNombreCaso] = useState(props.nombreCaso);
+    const fecha = new Date();
+    const dia = fecha.getDate();
+    const mes = fecha.getMonth() + 1;
+    const ano = fecha.getFullYear();
+    const fechaString = dia + '/' + mes + '/' + ano;
 
     let formatoEnteroPositivo = /^[1-9]\d*$/;
+
+    useEffect(() => {
+        setNombreCaso((prevState) => props.nombreCaso);
+    }, [props.nombreCaso]);
+
 
     const agregarValores1 = () => {
         setValores1((prevState) => [props.crecimientoCP, props.crecimientoLP]);
@@ -40,7 +50,7 @@ function PruebaPush(props) {
     }, [valores1, vacasInicio]);
 
     const agregarValores2 = () => {
-        setValores2((prevState) => [props.crecimientoCP, props.crecimientoLP])
+        setValores2((prevState) => [props.crecimientoCP, props.crecimientoLP]);
         setResumeninputs2((prevState) => props.resumeninputs);
         setResumenresultados2((prevState) => props.resumenresultados);
     };
@@ -110,13 +120,13 @@ function PruebaPush(props) {
                     <button className="button" onClick={() => agregarValores3()}>Estado 3</button>
                     <p>CRECIMIENTO - CP: {(valores3[0]).toFixed(1)}% | LP: {(valores3[1]).toFixed(1)}%</p>
                 </div>
-                <GraficoEvolucion linea1={linea1} linea2={linea2} linea3={linea3} />
+                <GraficoEvolucion nombreCaso={nombreCaso} fechaString={fechaString} linea1={linea1} linea2={linea2} linea3={linea3} />
                 <div className='subseccion'>
                     <button className="button" onClick={() => handleMostrarResumen()}>
                         {mostrarResumen === true ? "Ocultar resumen" : "Mostrar resumen"}
                     </button>
                 </div>
-                {mostrarResumen === true && (<Resumen resumeninputs1={resumeninputs1} resumeninputs2={resumeninputs2}
+                {mostrarResumen === true && (<Resumen nombreCaso={nombreCaso} fechaString={fechaString} resumeninputs1={resumeninputs1} resumeninputs2={resumeninputs2}
                     resumeninputs3={resumeninputs3} resumenresultados1={resumenresultados1}
                     resumenresultados2={resumenresultados2} resumenresultados3={resumenresultados3} />)}
             </div>)

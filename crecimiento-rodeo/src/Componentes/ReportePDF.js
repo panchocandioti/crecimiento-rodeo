@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
@@ -18,31 +18,70 @@ const styles = StyleSheet.create({
         padding: 5,
         textAlign: 'center',
     },
-    title: {
+    title1: {
         textAlign: 'center',
         marginTop: '30px',
         fontWeight: 'bold',
+        fontSize: '15',
+    },
+    title2: {
+        textAlign: 'center',
+        marginTop: '4px',
+        fontWeight: 'bold',
+        fontSize: '12',
     },
     footer: {
         textAlign: 'center',
-        fontSize: '9',
+        fontSize: '10',
     },
 });
 
 function ReportePDF(props) {
 
-    const inputs1 = props.inputs1;
-    const inputs2 = props.inputs2;
-    const inputs3 = props.inputs3;
-    const resultados1 = props.resultados1;
-    const resultados2 = props.resultados2;
-    const resultados3 = props.resultados3;
+    const [inputs1, setInputs1] = useState(props.inputs1);
+    const [inputs2, setInputs2] = useState(props.inputs2);
+    const [inputs3, setInputs3] = useState(props.inputs3);
+    const [resultados1, setResultados1] = useState(props.resultados1);
+    const [resultados2, setResultados2] = useState(props.resultados2);
+    const [resultados3, setResultados3] = useState(props.resultados3);
+    const [nombreCaso, setNombreCaso] = useState(props.nombreCaso);
+    const fechaString = props.fechaString;
+
+    useEffect(() => {
+        setInputs1((prevState) => props.inputs1)
+    }, [props.inputs1]);
+
+    useEffect(() => {
+        setInputs2((prevState) => props.inputs2)
+    }, [props.inputs2]);
+
+    useEffect(() => {
+        setInputs3((prevState) => props.inputs3)
+    }, [props.inputs3]);
+
+    useEffect(() => {
+        setResultados1((prevState) => props.resultados1)
+    }, [props.resultados1]);
+
+    useEffect(() => {
+        setResultados2((prevState) => props.resultados2)
+    }, [props.resultados2]);
+
+    useEffect(() => {
+        setResultados3((prevState) => props.resultados3)
+    }, [props.resultados3]);
+
+    useEffect(() => {
+        setNombreCaso((prevState) => props.nombreCaso)
+    }, [props.nombreCaso]);
+
 
     return (
         <Document>
             <Page size="A4" orientation='landscape'>
                 <View>
-                    <Text style={styles.title}>REPORTE - Comparación de estados - Crecimiento del rodeo lechero</Text>
+                    <Text style={styles.title1}>{nombreCaso}</Text>
+                    <Text style={styles.title2}>REPORTE - Comparación de estados - Crecimiento del rodeo lechero - {fechaString}</Text>
                     <View style={styles.table}>
                         <View style={styles.tableRow}>
                             <View style={styles.tableCell}>
@@ -341,7 +380,7 @@ function ReportePDF(props) {
                             </View>
                         </View>
                     </View>
-                    <Text style={styles.footer}>Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com</Text>
+                    <Text style={styles.footer}>Desarrollado por: Ing. Agr. EPL Francisco Candioti - panchocandioti@gmail.com - MiLecheria.ar</Text>
                 </View>
             </Page>
         </Document>

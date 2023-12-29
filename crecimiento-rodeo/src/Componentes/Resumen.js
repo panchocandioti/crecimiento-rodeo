@@ -11,6 +11,8 @@ function Resumen(props) {
     const resultados1 = props.resumenresultados1;
     const resultados2 = props.resumenresultados2;
     const resultados3 = props.resumenresultados3;
+    const nombreCaso = props.nombreCaso;
+    const fechaString = props.fechaString;
 
     return (
         <div className='resultados'>
@@ -158,7 +160,7 @@ function Resumen(props) {
                 </table>
             </div>
             <div>
-                <PDFDownloadLink document={<ReportePDF inputs1={inputs1} inputs2={inputs2} inputs3={inputs3} resultados1={resultados1} resultados2={resultados2} resultados3={resultados3} />} fileName="resumen.pdf">
+                <PDFDownloadLink document={<ReportePDF nombreCaso={nombreCaso} fechaString={fechaString} inputs1={inputs1} inputs2={inputs2} inputs3={inputs3} resultados1={resultados1} resultados2={resultados2} resultados3={resultados3} />} fileName="resumen.pdf">
                     {({ blob, url, loading, error }) => (loading ? 'Cargando documento...' : 'Descargar PDF')}
                 </PDFDownloadLink>
             </div>

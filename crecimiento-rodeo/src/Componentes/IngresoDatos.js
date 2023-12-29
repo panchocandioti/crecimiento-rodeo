@@ -24,6 +24,7 @@ function IngresoDatos() {
     const [hembrasPrimiparas, setHembrasPrimiparas] = useState('');
     const [hembrasMultiparas, setHembrasMultiparas] = useState('');
     const [mostrarSeccion3, setMostrarSeccion3] = useState(false);
+    const [nombreCaso, setNombreCaso] = useState('');
 
     //Cálculos sección 1
     const bajas = (parseFloat(rechazoAdultas) + parseFloat(mortandadAdultas)).toFixed(1);
@@ -89,6 +90,11 @@ function IngresoDatos() {
     }
 
     //Sección 1
+
+    const handleNombreCasoChange = (e) => {
+        setNombreCaso(e.target.value);
+    };
+
     const handleIEPChange = (e) => {
         setIntervaloEntrePartos(e.target.value);
     };
@@ -152,6 +158,21 @@ function IngresoDatos() {
 
     return (
         <div>
+            <div className='seccion'>
+                <h3>Nombre de la simulación:</h3>
+                <form>
+                    <div className='seccionFormulario'>
+                        <label id="nombreCaso">Denominación del caso (opcional): </label>
+                        <input type='text' value={nombreCaso} onChange={handleNombreCasoChange} placeholder='Ingresar nombre' />
+                        <Tooltip anchorSelect="#nombreCaso" place="top">
+                            <p><b>Nombre del caso de estudio:</b></p>
+                            <p>Identificación de la simulación</p>
+                            <p>(nombre de la empresa, establecimiento, propietario, etc.)</p>
+                            <p>Este nombre aparecerá encabezando los reportes PDF</p>
+                        </Tooltip>
+                    </div>
+                </form>
+            </div>
             <div className='seccion'>
                 <h3>Cálculo de bajas anuales y vida útil de vacas adultas:</h3>
                 <form>
@@ -289,7 +310,7 @@ function IngresoDatos() {
                 <h3>Resultados:</h3>
                 <Grafico bajas={bajas} reposicionCP={reposicionCP} reposicionLP={reposicionLP} validacion1={validacion1} validacion2={validacion2} />
                 <CrecimientoRodeo crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} reposicionCP={reposicionCP} reposicionLP={reposicionLP} bajas={bajas} validacion1={validacion1} validacion2={validacion2} />
-                <PruebaPush crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} resumeninputs={resumeninputs} resumenresultados={resumenresultados} />
+                <PruebaPush nombreCaso={nombreCaso} crecimientoCP={crecimientoCP} crecimientoLP={crecimientoLP} resumeninputs={resumeninputs} resumenresultados={resumenresultados} />
                 <BotonReset />
             </div>)}
         </div>
