@@ -46,7 +46,7 @@ function Presentacion() {
     return (
         <div>
             <header className="App-header">
-                <img src={MiLecheria} id="MiLecheria"></img>
+                <img src={MiLecheria} id="MiLecheria" alt='LogoMiLecheria.ar'></img>
                 <br></br>
                 <h1>CRECIMIENTO DEL RODEO LECHERO</h1>
             </header>
@@ -139,15 +139,14 @@ function Presentacion() {
             <footer className='footer'>
                 <div>
                     <p><b>Desarrollador:</b></p>
-                    <p>Ing. Agr. EPL Francisco Candioti</p>
-                    <p>panchocandioti@gmail.com</p>
+                    <p><b><a href='https://www.linkedin.com/in/francisco-candioti-0b167834/' target="_blank" rel="noopener noreferrer">Ing. Agr. EPL Francisco Candioti</a></b> <a href='mailto:panchocandioti@gmail.com'>panchocandioti@gmail.com</a></p>
                 </div>
                 <div>
                     <p><b>Con el apoyo de:</b></p>
                 </div>
                 <div className='containerLogos'>
-                    <img src={LogoSaltoAgro} className='logo'></img>
-                    <img src={LogoML1} className='logo'></img>
+                    <img src={LogoSaltoAgro} className='logo' alt='LogoSalto'></img>
+                    <img src={LogoML1} className='logo' alt='LogoML1'></img>
                 </div>
             </footer>
         </div>
