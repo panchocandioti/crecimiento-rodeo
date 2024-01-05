@@ -70,11 +70,11 @@ function IngresoDatos() {
     }
 
     //Validación 2
-    if (!formatoEnteroPositivo.test(edadPartoAnterior) || edadPartoAnterior < 12 || edadPartoAnterior > 48) {
+    if (!formatoPorcentaje.test(edadPartoAnterior) || edadPartoAnterior < 12 || edadPartoAnterior > 48) {
         validacion2 = false;
     }
 
-    if (!formatoEnteroPositivo.test(edadPartoActual) || edadPartoActual < 12 || edadPartoActual > 48) {
+    if (!formatoPorcentaje.test(edadPartoActual) || edadPartoActual < 12 || edadPartoActual > 48) {
         validacion2 = false;
     }
 
