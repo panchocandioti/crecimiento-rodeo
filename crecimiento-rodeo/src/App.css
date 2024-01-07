@@ -145,3 +145,9 @@ footer {
   flex-wrap: wrap;
   padding-bottom: 10px;
 }
+
+#MiLecheria {
+  width: 250px;
+  margin-top:15px;
+  margin-bottom: 3px;
+}

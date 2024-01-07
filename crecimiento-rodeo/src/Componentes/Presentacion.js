@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import IngresoDatos from './IngresoDatos';
-import MiLecheria from "../Media/MiLecheria.jpg"
+import ImagotipoBlanco from "../Media/Imagotipo BLANCO.png";
 import LogoSaltoAgro from "../Media/LogoSaltoAgro.png"
 import LogoML1 from "../Media/LogoML1.png"
 
@@ -46,7 +46,7 @@ function Presentacion() {
     return (
         <div>
             <header className="App-header">
-                <img src={MiLecheria} id="MiLecheria" alt='LogoMiLecheria.ar'></img>
+                <img src={ImagotipoBlanco} id="MiLecheria" alt='LogoMiLecheria.ar'></img>
                 <br></br>
                 <h1>CRECIMIENTO DEL RODEO LECHERO</h1>
             </header>
