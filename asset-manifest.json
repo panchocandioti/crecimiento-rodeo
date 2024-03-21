@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/crecimiento-rodeo/static/css/main.a1bc331a.css",
-    "main.js": "/crecimiento-rodeo/static/js/main.6a771a53.js",
+    "main.css": "/crecimiento-rodeo/static/css/main.d5540833.css",
+    "main.js": "/crecimiento-rodeo/static/js/main.c6042757.js",
     "static/js/498.0f2c7a73.chunk.js": "/crecimiento-rodeo/static/js/498.0f2c7a73.chunk.js",
     "static/js/703.8edc75b9.chunk.js": "/crecimiento-rodeo/static/js/703.8edc75b9.chunk.js",
     "static/js/513.d919347f.chunk.js": "/crecimiento-rodeo/static/js/513.d919347f.chunk.js",
     "static/js/787.046abf49.chunk.js": "/crecimiento-rodeo/static/js/787.046abf49.chunk.js",
     "static/media/vacas_catie.jpg": "/crecimiento-rodeo/static/media/vacas_catie.ab8d57febaf6b44e5406.jpg",
-    "static/media/LogoSaltoAgro.png": "/crecimiento-rodeo/static/media/LogoSaltoAgro.566fa99ab4cc52c400a7.png",
+    "static/media/LogoSaltoAgro.png": "/crecimiento-rodeo/static/media/LogoSaltoAgro.c8696cc9c101ae8e82d5.png",
     "static/media/LogoML1.png": "/crecimiento-rodeo/static/media/LogoML1.bdb832ca919f563f2742.png",
     "static/media/Imagotipo BLANCO.png": "/crecimiento-rodeo/static/media/Imagotipo BLANCO.03a905ce6f8dfede116b.png",
     "index.html": "/crecimiento-rodeo/index.html",
-    "main.a1bc331a.css.map": "/crecimiento-rodeo/static/css/main.a1bc331a.css.map",
-    "main.6a771a53.js.map": "/crecimiento-rodeo/static/js/main.6a771a53.js.map",
+    "main.d5540833.css.map": "/crecimiento-rodeo/static/css/main.d5540833.css.map",
+    "main.c6042757.js.map": "/crecimiento-rodeo/static/js/main.c6042757.js.map",
     "498.0f2c7a73.chunk.js.map": "/crecimiento-rodeo/static/js/498.0f2c7a73.chunk.js.map",
     "703.8edc75b9.chunk.js.map": "/crecimiento-rodeo/static/js/703.8edc75b9.chunk.js.map",
     "513.d919347f.chunk.js.map": "/crecimiento-rodeo/static/js/513.d919347f.chunk.js.map",
     "787.046abf49.chunk.js.map": "/crecimiento-rodeo/static/js/787.046abf49.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1bc331a.css",
-    "static/js/main.6a771a53.js"
+    "static/css/main.d5540833.css",
+    "static/js/main.c6042757.js"
   ]
 }
