@@ -134,7 +134,8 @@ footer {
   flex-wrap: wrap;
   border-top: rgb(117, 189, 213) solid 25px;
   border-bottom:rgb(117, 189, 213) solid 25px;
-  padding: 10px;
+  padding-top: 15px;
+  line-height: 0.8;
 }
 
 .containerLogos {
